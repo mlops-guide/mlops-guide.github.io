@@ -1,3 +1,23 @@
 site_name: MLOps Guide
 theme:
   name: material
+  palette:
+
+    # Light mode
+    - indigo: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: orange
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
