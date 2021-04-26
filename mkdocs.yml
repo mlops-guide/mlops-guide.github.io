@@ -1,6 +1,8 @@
 site_name: MLOps Guide
 theme:
   name: material
+  features:
+    - navigation.sections
   palette:
 
     # Light mode
