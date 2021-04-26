@@ -2,6 +2,8 @@
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
+## ASCII Cinema Example
+<script id="asciicast-410111" src="https://asciinema.org/a/410111.js" async></script>
 ## Commands
 
 * `mkdocs new [dir-name]` - Create a new project.
