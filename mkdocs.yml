@@ -1,25 +1,45 @@
 site_name: MLOps Guide
+
+
+repo_name: mlops-guide
+repo_url: https://github.com/MLOPsStudyGroup/mlops-guide
+
 theme:
   name: material
+  favicon: assets/favicon.png
+  logo: assets/logo-white.png
+
   features:
-    - navigation.sections
+    - navigation.expand
   palette:
+    # Dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: default
+        primary: #2c52db
+        accent: orange
+        toggle:
+          icon: octicons/sun-16
+          title: Switch to light mode
+          name: Switch to light mode
 
     # Light mode
-    - indigo: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
+      primary: #2c52db
       accent: orange
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: octicons/moon-16
         name: Switch to dark mode
 
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: orange
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+    
+  
+  icon:
+    repo: fontawesome/brands/github-alt
+
+nav:
+    - Comece Aqui: 'index.md'
+    - Guia:
+      - 'Infraestrutura/index.md'
+    - Outros:
+      - 'Testes/index.md'
 
