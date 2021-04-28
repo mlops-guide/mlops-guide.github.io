@@ -38,6 +38,7 @@ nav:
     - Comece Aqui: 'index.md'
     - Guia:
       - 'Infraestrutura/index.md'
+      - 'Deployment/index.md'
     - Outros:
       - 'Testes/index.md'
 
