@@ -12,26 +12,24 @@ theme:
   features:
     - navigation.expand
   palette:
-    # Dark mode
-      - media: "(prefers-color-scheme: dark)"
-        scheme: default
-        primary: #2c52db
-        accent: orange
-        toggle:
-          icon: octicons/sun-16
-          title: Switch to light mode
-          name: Switch to light mode
-
     # Light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: slate
+      scheme: default
       primary: #2c52db
       accent: orange
       toggle:
         icon: octicons/moon-16
         name: Switch to dark mode
 
-    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: #2c52db
+      accent: orange
+      toggle:
+        icon: octicons/sun-16
+        title: Switch to light mode
+        name: Switch to light mode
   
   icon:
     repo: fontawesome/brands/github-alt
