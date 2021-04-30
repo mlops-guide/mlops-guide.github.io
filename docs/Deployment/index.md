@@ -66,7 +66,7 @@ SPACE_ID = credentials["space_id"]
 
 client.set.default_space(SPACE_ID)
 ```
-Para fazer o deployment, é preciso dizer ao Watson algumas características do modelo, como nome, tipo (no caso do exemplo é  ```scikit-learn_0.23```) e especificações da máquina que vai rodar o micro-serviço.
+Antes do deployment, é preciso dizer ao Watson algumas características do modelo, como nome, tipo (no caso do exemplo é  ```scikit-learn_0.23```) e especificações da máquina que vai rodar o micro-serviço.
 
 Depois disso, o modelo é guardado como um ```Asset``` do Watson ML.
 ```python
@@ -81,7 +81,7 @@ model_props = {
 model_details = client.repository.store_model(model=MODEL, meta_props=model_props)
 model_uid = client.repository.get_model_uid(model_details)
 ```
-
+Para fazer o deployment nomavente são passadas algumas características do modelo depois o deploy é feito a partir do ID de armazenamento obtido na etapa anterior.
 ```python
 deployment_props = {
     client.deployments.ConfigurationMetaNames.NAME: DEPLOY_NAME,
@@ -106,7 +106,7 @@ yaml.dump(metadata, f, allow_unicode=True)
 
 ### Acessando as Predições do Modelo
 
-Feito o deplyment do modelo, é possível acessa-lo tanto por meio de requests em um end-point como pela biblioteca em Python ``` ibm_watson_machine_learning ```, onde pode-se mandar tanto somente features para uma única predição como também várias linhas de um dataframe por meio de um payload.
+Feito o deplyment do modelo, é possível acessa-lo tanto por meio de requests em um end-point como pela biblioteca em Python ```ibm_watson_machine_learning```, onde pode-se mandar tanto somente features para uma única predição como também várias linhas de um dataframe por meio de um payload.
 
 ```python
 payload = {
@@ -134,3 +134,8 @@ A resposta do modelo vai conter a predição e certeza???????? correspondente. N
         [1, [0.2879899631347379, 0.7120100368652621]],
         [0, [0.9639766912352016, 0.03602330876479841]],
         [1, [0.049694416576558154, 0.9503055834234418]],
+
+
+### Atualizando o Modelo
+
+### Rollback do Modelo
