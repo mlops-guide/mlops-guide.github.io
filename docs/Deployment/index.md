@@ -1,13 +1,5 @@
 # Deployment com o Watson Machine Learning
 
-## Introdução
-
-A IBM oferece diversos serviços e ferramentas para o desenvolvimento de modelos preditivos e de inteligência artificial que possam melhorar processos, interações e ações. Dentre eles, o [Watson Machine Learning](https://www.ibm.com/cloud/machine-learning) permite que modelos sejam salvos na nuvem, onde podem ser versionados e acessados por meio de APIs, assim permitindo que predições sejam feitas sem a necessidade de se criar e configurar uma instância para hospedar o micro-serviço. 
-
-### Deployment Space
-
-
-- Mostrar como funciona 
 
 ### Deployment using Python API  
 
@@ -137,5 +129,71 @@ The model response will contain the scoring result containing prediction and cor
 
 
 ### Updating the Model
+Updating the asset contaning the model and/or updating the deployment. The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our tamplate repository.
+
+1. Firstly we need to update the model asset in WML by passing the new model as well as a name.
+
+```python 
+print("\nCreating new version")
+
+published_model = client.repository.update_model(
+    model_uid=MODEL_GUID,
+    update_model=model,
+    updated_meta_props={
+        client.repository.ModelMetaNames.NAME: metadata["project_name"]
+        + "_"
+        + metadata["project_version"]
+    },
+)
+```
+2. After that a new revision can be created.
+```python 
+new_model_revision = client.repository.create_model_revision(MODEL_GUID)
+
+rev_id = new_model_revision["metadata"].get("rev")
+print("\nVersion:", rev_id)
+
+client.repository.list_models_revisions(MODEL_GUID)
+```
+3. Finally we can update the deployment.
+```python
+change_meta = {client.deployments.ConfigurationMetaNames.ASSET: {"id": MODEL_GUID}}
+
+print("Updating the following model: ")
+print(client.deployments.get_details(DEPLOYMENT_UID))
+
+client.deployments.update(DEPLOYMENT_UID, change_meta)
+```
 
 ### Model Rollback
+1. We have previously created revisions of a model, to rollback the model version, we'll list all the revisions made:
+```python
+client.repository.list_models_revisions(MODEL_GUID)
+```
+![](../assets/versions.PNG)
+
+2. Now we can choose wich revision we want to rollback to and then update the deployment referencing that revision ID.
+```python
+MODEL_VERSION = input("MODEL VERSION: ")
+
+meta = {
+    client.deployments.ConfigurationMetaNames.ASSET: {
+        "id": MODEL_GUID,
+        "rev": MODEL_VERSION,
+    }
+}
+updated_deployment = client.deployments.update(
+    deployment_uid=DEPLOYMENT_UID, changes=meta
+)
+```
+3. Finally we'll wait for the uptade to finish so we can see if it was successful.
+```python
+status = None
+while status not in ["ready", "failed"]:
+    print(".", end=" ")
+    time.sleep(2)
+    deployment_details = client.deployments.get_details(DEPLOYMENT_UID)
+    status = deployment_details["entity"]["status"].get("state")
+
+print("\nDeployment update finished with status: ", status)
+```
