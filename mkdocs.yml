@@ -35,10 +35,25 @@ theme:
     repo: fontawesome/brands/github-alt
 
 nav:
-    - Comece Aqui: 'index.md'
-    - Guia:
+    - Home: 'index.md'
+    - MLOps:
+      - 'MLOps/Principles/index.md'
+      - 'MLOps/Data/index.md'
+      - 'MLOps/PipelineAutomation/index.md'
+      - 'MLOps/FeatureStore/index.md'
+      - 'MLOps/CICDML/index.md'
+      - 'MLOps/Monitoring/index.md'
+    - Guide:
+      - 'Structure/index.md'
       - 'Infraestrutura/index.md'
+      - Versioning:
+        - 'Versionamento/index.md'
+        - 'Versionamento/setup_dvc.md'
+        - 'Versionamento/basic_dvc.md'
+        - 'Versionamento/pipelines_dvc.md'
       - 'Deployment/index.md'
-    - Outros:
-      - 'Testes/index.md'
+      - 'CICD/index.md'
+      - 'Openscale/index.md'
 
+    - Misc.:
+      - 'Testes/index.md'
