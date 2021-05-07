@@ -46,10 +46,14 @@ nav:
     - Guide:
       - 'Structure/index.md'
       - 'Infraestrutura/index.md'
+      - Versioning:
+        - 'Versionamento/index.md'
+        - 'Versionamento/setup_dvc.md'
+        - 'Versionamento/basic_dvc.md'
+        - 'Versionamento/pipelines_dvc.md'
       - 'Deployment/index.md'
       - 'CICD/index.md'
       - 'Openscale/index.md'
 
     - Misc.:
       - 'Testes/index.md'
-
