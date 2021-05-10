@@ -22,7 +22,7 @@ The main tools discussed in the guide are shown in the following table. As the g
 
 ### Folder Structure
 
-<div style="text-align:center"><img src="../assets/folders.png" alt="drawing" width="275"/></div>
+<div style="text-align:center"><img src="../../assets/folders.png" alt="drawing" width="275"/></div>
 The above image is the project's folder structure, we'll talk about each specific part in further details trough out the guide.
 
 
