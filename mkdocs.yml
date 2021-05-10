@@ -44,7 +44,9 @@ nav:
       - 'MLOps/CICDML/index.md'
       - 'MLOps/Monitoring/index.md'
     - Guide:
-      - 'Structure/index.md'
+      - Introduction:
+        - 'Structure/project_structure.md'
+        - 'Structure/starting.md'  
       - 'Infraestrutura/index.md'
       - Versioning:
         - 'Versionamento/index.md'

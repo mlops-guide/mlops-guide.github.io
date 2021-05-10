@@ -1,17 +1,37 @@
-# Introduction and Project Structure
+# Tools and Project Structure
 
-In the following sections we will go over the steps for the implemetation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson. as well as intructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
+In the following sections we will go over the steps for the implementation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson. as well as instructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
+
+
+### Project Tools
+The main tools discussed in the guide are shown in the following table. As the guide is intended to be modular, a team can swap tools for others depending on the project necessities or preferences.
+
+| Tools          | Function                   | Developer  |
+| -------------- |:--------------------------|:-----------|
+| [IBM Watson ML](https://www.ibm.com/cloud/machine-learning)  | Deploying model as API     | IBM        |
+| [IBM Watson Openscale](https://www.ibm.com/cloud/watson-openscale)  | Monitoring Model in production     | IBM |
+| [DVC](https://dvc.org/)            | Data and Model Versioning  | DVC Organization  |
+| [CML](https://dvc.org/doc/cml)            | Pipeline Automation        | DVC Organization    |
+| [Terraform](https://www.terraform.io/)      | Setups IBM infrastructure with script | HashiCorp|
+| [Github](https://github.com/)         | Code versioning            | Github |
+| [Github Actions](https://github.com/features/actions) | CI/CD Automation           | Github |
+| [Pytest](https://docs.pytest.org/)         | Python script testing      | Pytest-dev |
+| [Pre-commit](https://pre-commit.com/)     | Running tests on local commit | Pre-commit |
+| [Cookiecutter](https://github.com/cookiecutter/cookiecutter)   | Creating folder structure and files | Cookiecutter |
+
 
 ### Folder Structure
 
-<div style="text-align:center"><img src="../assets/folders.png" alt="drawing" width="275"/></div>
-The above image is the project's folder structure, we'll talk about each specific part in further details trough out the guide
+<div style="text-align:center"><img src="../../assets/folders.png" alt="drawing" width="275"/></div>
+The above image is the project's folder structure, we'll talk about each specific part in further details throughout the guide
 
 - ```data``` , ```models``` and ```results``` contain files which are being stored and versioned by DVC.
 
 - ```notebooks``` contain Jupyter Notebooks used for the exploratory analysis, development of models, or data manipulation.
 
 - ```src``` contains scripts for training and evaluating the model as well as tests and scripts for pipelines and APIs.
+
+This folder structure is going to be implemented in a blank project in [Introduction/Starting a New Project with Cookiecutter](/Structure/starting/)
 
 ### Requirements
 The requirements file is a list of all of a project’s dependencies and the specific version of each dependency, including the dependencies needed by the dependencies. It can also be used to create a virtual enviroment.
