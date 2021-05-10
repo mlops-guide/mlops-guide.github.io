@@ -16,7 +16,6 @@
     Under ```Service Provider```, select ```Watson Machine Learning (V2)``` from the dropdown. Next select the deployment space your model is located in.
     <div style="text-align:center"><img src="../assets/Openscale/Capture4.PNG" alt="drawing" /></div>
   
-    2.3
 
 3. Adding to Dashboard
     3.1 On the ```Insights Dashboard```, click on the ```Add to dashboard``` button.
@@ -192,17 +191,25 @@ In the ```Transactions``` page, we can see informations about transactions, incl
 
         df = records2.result
 
-10. Then we can use that Pandas dataframe to create plots or other analysis.
+10. Then we can use that Pandas dataframe to create plots or other forms of analysis.
 
         import matplotlib.pyplot as plt
 
         plt.hist(df.prediction_probability)
-        plt.legend(title='Predictions Probability')
+        plt.legend(title='Predictions Probability Histogram')
         plt.show()
 
     <div style="text-align:center"><img src="../assets/Openscale/download.svg" alt="drawing" width=70%/></div>
 
-### Evaluating 
+### Evaluating Model
+On the main ```Insights Dashboard``` when click on our deployment, we can evaulate or model by clicking on the ```Actions``` button on the top-right and then ```Evaluate now``` in dropdown, where we can import a test dataset by either directly uploading a ```.csv``` file or by using dataset or database stored in the IBM COS.
+
+<div style="text-align:center"><img src="../assets/Openscale/Capture13.PNG" alt="drawing" width=60%/></div>
+
+After that, the metrics we defined for the monitors will be used to generate reports depicting our model's performance.
+
+<div style="text-align:center"><img src="../assets/Openscale/Capture14.PNG" alt="reports" width=60%/></div>
+
 
 ### Explaining Predictions
 Again in the ```Transactions``` page, we can click on the ```Explain``` button, in the following page we can observe each features' relative weight indicating how strongly they influenced the model’s predicted outcome.
