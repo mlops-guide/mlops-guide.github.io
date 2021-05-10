@@ -1,18 +1,18 @@
 # Monitoring with IBM Opescale
 
-### Setting Up the Enviroment
+### Setting Up the Environment
 1. Creating Database
 
 2. Creating Machine Learning Provider
 
-    On the Machine Learing Provider Tab, click on the ```Add machine learning povider buttonr```.
+    On the Machine Learning  Provider Tab, click on the ```Add machine learning provider``` button.
     <div style="text-align:center"><img src="../assets/Openscale/Capture2.PNG" alt="drawing" /></div>
 
     2.1 Add a name and description.
 
     <div style="text-align:center"><img src="../assets/Openscale/Capture3.PNG" alt="drawing" /></div>
 
-    2.2 Add connetions and Select Deployment Space
+    2.2 Add connections  and Select Deployment Space
     Under ```Service Provider```, select ```Watson Machine Learning (V2)``` from the dropdown. Next select the deployment space your model is located in.
     <div style="text-align:center"><img src="../assets/Openscale/Capture4.PNG" alt="drawing" /></div>
   
@@ -24,7 +24,7 @@
 
      <div style="text-align:center"><img src="../assets/Openscale/Capture6.PNG" alt="drawing" /></div>
 
-    3.3 Select the data and Algorithim types, in our example it is a Binary Classification.
+    3.3 Select the data and algorithm  types, in our example it is a Binary Classification.
 
     3.4 The next step is selecting the training data that can be stored on a Db2 database or in IBM's Cloud Object Storage.
 
@@ -57,7 +57,7 @@
 
     4.4 __Explainability:__ This allows us to reveal which features contributed to the model’s predicted outcome for a transaction and suggests what changes would result in a different outcome.
     
-    We can choose all features an controllabe.
+    We can set all features as controllable.
 
 ### Logging 
 In the ```Transactions``` page, we can see informations about transactions, including a Timestamp, Prediction and Confidence.
@@ -66,7 +66,7 @@ In the ```Transactions``` page, we can see informations about transactions, incl
 
 #### We can also access and generate Logs via the Python API
 
-1. First we need to initilize the Watson Machine Learning and OpenScale clients as well as the IAMAuthenticator.
+1. First we need to initialize  the Watson Machine Learning and OpenScale clients as well as the IAMAuthenticator.
 
         service_credentials = {
             "apikey": credentials["apikey"],
@@ -202,7 +202,7 @@ In the ```Transactions``` page, we can see informations about transactions, incl
     <div style="text-align:center"><img src="../assets/Openscale/download.svg" alt="drawing" width=70%/></div>
 
 ### Evaluating Model
-On the main ```Insights Dashboard``` when click on our deployment, we can evaulate or model by clicking on the ```Actions``` button on the top-right and then ```Evaluate now``` in dropdown, where we can import a test dataset by either directly uploading a ```.csv``` file or by using dataset or database stored in the IBM COS.
+On the main ```Insights Dashboard``` when click on our deployment, we can evaluate  or model by clicking on the ```Actions``` button on the top-right and then ```Evaluate now``` in dropdown, where we can import a test dataset by either directly uploading a ```.csv``` file or by using dataset or database stored in the IBM COS.
 
 <div style="text-align:center"><img src="../assets/Openscale/Capture13.PNG" alt="drawing" width=60%/></div>
 
@@ -212,9 +212,9 @@ After that, the metrics we defined for the monitors will be used to generate rep
 
 
 ### Explaining Predictions
-Again in the ```Transactions``` page, we can click on the ```Explain``` button, in the following page we can observe each features' relative weight indicating how strongly they influenced the model’s predicted outcome.
+Again, in the ```Transactions``` page, we can click on the ```Explain``` button, in the following page we can observe each features' relative weight indicating how strongly they influenced the model’s predicted outcome.
  <div style="text-align:center"><img src="../assets/Openscale/Capture11.PNG" alt="drawing" width=100%/></div>
 
-In the ```Inspect``` tab, there is a table displaying the values aech feature would have to have to alter the prediction result, here we can also change the values by hand to see what the outcome would be.
+In the ```Inspect``` tab, there is a table displaying the values each  feature would have to have to alter the prediction result, here we can also change the values by hand to see what the outcome would be.
 
  <div style="text-align:center"><img src="../assets/Openscale/Capture12.PNG" alt="drawing" width=100%/></div>
