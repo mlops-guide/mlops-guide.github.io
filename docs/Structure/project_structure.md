@@ -1,4 +1,4 @@
-# Introduction and Project Structure
+# Tools and Project Structure
 
 In the following sections we will go over the steps for the implementation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson. as well as instructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
 
@@ -25,11 +25,15 @@ The main tools discussed in the guide are shown in the following table. As the g
 <div style="text-align:center"><img src="../assets/folders.png" alt="drawing" width="275"/></div>
 The above image is the project's folder structure, we'll talk about each specific part in further details trough out the guide.
 
+
 - ```data``` , ```models``` and ```results``` contain files which are being stored and versioned by DVC.
 
 - ```notebooks``` contain Jupyter Notebooks used for the exploratory analysis, development of models, or data manipulation.
 
 - ```src``` contains scripts for training and evaluating the model as well as tests and scripts for pipelines and APIs.
+
+
+This folder structure is going to be implemented in a blank project in [Introduction/Starting a New Project with Cookiecutter](/Structure/starting/)
 
 ### Requirements
 The requirements file is a list of all of a project’s dependencies and the specific version of each dependency, including the dependencies needed by the dependencies. It can also be used to create a virtual enviroment.
@@ -73,3 +77,4 @@ The Jupyter Notebook is an open-source web application that allows you to create
                 return results
 
 In our project we choose to use notebooks as a form of experimentation of models or processes and the script as a more 'definitive' form for the reasons cited above.
+
