@@ -57,3 +57,8 @@ nav:
 
     - Misc.:
       - 'Testes/index.md'
+
+extra_css:
+  - ASCII_cinema/asciinema-player.css
+extra_javascript:
+  - ASCII_cinema/asciinema-player.js
