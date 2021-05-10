@@ -189,7 +189,7 @@ Updating the asset contaning the model and/or updating the deployment. The compl
             deployment_uid=DEPLOYMENT_UID, changes=meta
         )
 
-3. Finally we'll wait for the uptade to finish so we can see if it was successful.
+3. Finally we'll wait for the update to finish so we can see if it was successful.
 
         status = None
         while status not in ["ready", "failed"]:
