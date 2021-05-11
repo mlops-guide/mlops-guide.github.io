@@ -92,6 +92,4 @@ def update_deployment_space(new_name, space_id):
 
 ### Notes
 
-COLOCAR O LINK PARA O CODIGO
-
-To see the complete script [click here]()
+To see the complete script [click here](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/.infra/datapak_manage.py)

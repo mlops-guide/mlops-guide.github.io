@@ -153,4 +153,24 @@ If everything is correct then run **```terraform apply```** to create the infras
 
 ### Outputs
 
-ESCREVER
+After everything is set, terraform create a state file with the resources metadata. This file can be quite overhelming to work with and we will need some of this metadata. That's the use for an output file, when we run ```terraform apply```, it detects this file and create a section on the state file with the information needed and it is easier to work with.
+
+The following script is an output file with the metadatas that will be used on the next steps.
+
+```
+output "cos_crn" {
+  value = ibm_resource_instance.cos.crn
+}
+
+output "wml_name" {
+  value = ibm_resource_instance.wml.name
+}
+
+output "wml_crn" {
+  value = ibm_resource_instance.wml
+}
+
+```
+
+It is very straightforward and easy to read and understand. Note that, it is possible to create this file after everything is deployed and run a ```terraform apply``` again without worring about the instances.
+
