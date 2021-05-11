@@ -3,7 +3,7 @@
 ## What is a Feature Store?
 Feature Stores are components of data architecture that are becoming increasingly popular in the Machine Learning and MLOps environment. The goal of a Feature Store is to process data from various data sources at the same time and turn it into features, which will be consumed by the model training pipeline and the model serving. The concept of Feature Stores is novice and rapidly changing, therefore this page has the objective of showing the key features that are more common among the main Feature Stores in the market, but at the same time it is important to note that some of the tools and frameworks in the market might not comprehend all those exact characteristics in the same manner. 
 
-![alt text](FeatureStore-Simple.png "Logo Title Text 1")
+![Feature Store Overview](FeatureStoreOverview.png "Simple Feature Store Overview Diagram")
 
 ### Why it matters?
 Fetaure Stores can be very useful for Machine Learning in production and are very reliable ways to manage features  for research and training using Offline Stores, as it is to manage the feeding of features to a model served in production using an Online Store. This data component can manage to comprehend a wide spectrum of different projects and necessities, some of which are seen below.
@@ -30,7 +30,7 @@ Those types of data are combined inside and form two types of store:
 - **Online Stores:** Store composed of data from the Offline Store combined with real-time preprocessed features from streaming data sources. It is built with the objective of being the most up-to-date collection of organized features, which can be used to feed the Model in Production with new features for prediction. It is normally stored in databases for rapid access, like MySQL, Cassandra, Redis, but it can be stored in more complex systems.  
 
 ## Common Architecture
-
+![Feature Store Diagram](FeatureStoreDiagram.png "Feature Store Inside Diagram")
 ## Common Tools
 Many companies relay on proprietary software to develop Feature Stores, since many try to make a component that fits into their exactly use-case, such a as:
 

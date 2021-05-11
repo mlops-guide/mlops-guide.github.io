@@ -17,3 +17,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+    data/               # Data versioned by DVC
+    models/             # Models versioned by DVC
+    notebooks/          # Jupyter Notebooks used for the exploratory analysis, development of models, or data manipulation.
+    
+    results/
+    src/

@@ -47,7 +47,9 @@ nav:
       - 'MLOps/CICDML/index.md'
       - 'MLOps/Monitoring/index.md'
     - Guide:
-      - 'Structure/index.md'
+      - Introduction:
+        - 'Structure/project_structure.md'
+        - 'Structure/starting.md'  
       - 'Infraestrutura/index.md'
       - Versioning:
         - 'Versionamento/index.md'
@@ -60,3 +62,8 @@ nav:
 
     - Misc.:
       - 'Testes/index.md'
+
+extra_css:
+  - ASCII_cinema/asciinema-player.css
+extra_javascript:
+  - ASCII_cinema/asciinema-player.js

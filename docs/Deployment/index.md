@@ -3,7 +3,7 @@
 
 ### Deployment using Python API  
 
-The complete script can be fond on our [example reposistory](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py), it recives the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credencials file.
+The complete script can be found on our [example reposistory](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py), it receives  the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credentials file.
 
 ```python
 python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials.yaml
@@ -41,7 +41,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
             # pickle_model = pickle.load(file)
             pipeline = joblib.load(file)
 
-3. The next step is to create an instance of the IBM Watson ```client``` , to do that the credential loaded above will be used and a default [Deployment Space](paginaDoDeploySpace) will be set using the ID contained in the credenciais file, other constants will be set with informations regarding the model found on the ```metadata``` file.
+3. The next step is to create an instance of the IBM Watson ```client``` , to do that the credential loaded above will be used and a default [Deployment Space](paginaDoDeploySpace) will be set using the ID contained in the credentials file, other constants will be set with information’s regarding the model found on the ```metadata``` file.
 
         from ibm_watson_machine_learning import APIClient
 
@@ -70,7 +70,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
         model_details = client.repository.store_model(model=MODEL, meta_props=model_props)
         model_uid = client.repository.get_model_uid(model_details)
 
-5. Once complete, we'll give it the deployment a name and then deploy the model using the store ID é feito a partir do ID de armazenamento obobtained in the previous step.
+5. Once complete, we'll give the deployment a name and then deploy the model using the store ID obtained in the previous step.
 
         deployment_props = {
             client.deployments.ConfigurationMetaNames.NAME: DEPLOY_NAME,
@@ -93,7 +93,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
 
 ### Accessing Model Predictions
 
-Havind deployed the model. we can access it's predictions by sending requests to an end-point or by using the Python ```ibm_watson_machine_learning``` library, where we can send either features for a single prediction or payloads containing multiple lines of a dataframe, for example.
+Having deployed the model. we can access it's predictions by sending requests to an end-point or by using the Python ```ibm_watson_machine_learning``` library, where we can send either features for a single prediction or payloads containing multiple lines of a dataframe, for example.
 
 The payload body is made of the dataframe column names under the ```"fields"``` key and the features under ``` "values"``` .
 
@@ -108,7 +108,7 @@ The payload body is made of the dataframe column names under the ```"fields"``` 
 
     result = client.deployments.score(DEPLOYMENT_UID, payload)
 
-The model response will contain the scoring result containing prediction and coresponding probability. In the case of a binary classifier, the response will have the following format:
+The model response will contain the scoring result containing prediction and corresponding  probability. In the case of a binary classifier, the response will have the following format:
 
     [1, [0.06057910314628456, 0.9394208968537154]],
     [1, [0.23434887273340754, 0.7656511272665925]],
@@ -125,7 +125,7 @@ The model response will contain the scoring result containing prediction and cor
 
 
 ### Updating the Model
-Updating the asset contaning the model and/or updating the deployment. The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our tamplate repository.
+Updating the asset contaning the model and/or updating the deployment. The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our template repository.
 
 1. Firstly we need to update the model asset in WML by passing the new model as well as a name.
 
@@ -175,7 +175,7 @@ Updating the asset contaning the model and/or updating the deployment. The compl
         1   Rain_aus_v0.3  2021-03-31T18:28:07.771Z
         --  -------------  ------------------------
 
-2. Now we can choose wich revision we want to rollback to and then update the deployment referencing that revision ID.
+2. Now we can choose which revision we want to rollback to and then update the deployment referencing that revision ID.
 
         MODEL_VERSION = input("MODEL VERSION: ")
 
@@ -189,7 +189,7 @@ Updating the asset contaning the model and/or updating the deployment. The compl
             deployment_uid=DEPLOYMENT_UID, changes=meta
         )
 
-3. Finally we'll wait for the uptade to finish so we can see if it was successful.
+3. Finally we'll wait for the update to finish so we can see if it was successful.
 
         status = None
         while status not in ["ready", "failed"]:
