@@ -1,19 +1,24 @@
 # Data and Model Versioning
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+The use of code versioning tools is vital in the software development industry. The importance of these tools includes the possibility of replicating the same code base so that several people can work on the same project simultaneously. In addition, versioning these bases allows them to work in different sections in an organized manner and without compromising the integrity of the code in production.
 
-## ASCII Cinema Example
-<script id="asciicast-410111" src="https://asciinema.org/a/410111.js" async></script>
-## Commands
+As much as these tools solve several problems in software development, there are still issues in the machine learning environment. Code versioning is still crucial, but when working on a new experiment we need to make sure that it is reproducible by someone else.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+The development in machine learning is essentially experimental:  testing different resources, algorithms, model technics e parameter configuration. All those steps need to be registered to understand what works or not and most important: maximize reuse. 
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,7 +35,7 @@ $ dvc init
 
 If you run ```git status```, you can check DVC's initial config files that were created.
 
-### INSERIR ASCII CINEMA MOSTRANDO O GIT STATUS
+ascii_cinema do git status
 
 ### Remote Storage
 
@@ -72,9 +72,7 @@ aws_secret_access_key = ************
 
 ```
 
-
 or
-
 
 ```
 $ dvc remote modify credentialpath /path/to/creds
@@ -84,4 +82,3 @@ If you have any problems trying to configure your remote storage, go check [DVC 
 
 ___
 
-[*NEXT:* Data Versioning](./basic_dvc.md)
