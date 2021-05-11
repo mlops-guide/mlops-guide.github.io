@@ -46,8 +46,10 @@ nav:
     - Guide:
       - Introduction:
         - 'Structure/project_structure.md'
-        - 'Structure/starting.md'  
-      - 'Infraestrutura/index.md'
+        - 'Structure/starting.md'
+      - Environment:
+        - 'Infraestrutura/Terraform/index.md'
+        - 'Infraestrutura/Python/index.md'
       - Versioning:
         - 'Versionamento/index.md'
         - 'Versionamento/setup_dvc.md'

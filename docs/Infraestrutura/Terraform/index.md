@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Make a script to automate the infrastructure deployment is a very good practice as it enables a fast deployment in a disaster scenario, as well as an alternative plan to change providers as needed.
+Infrastructure as a code(IaC) is a process of managing and provisioning mechanisms for authenticating, planning and implementing servers and data centers in the cloud and private network without the need to manually configure everything through the provider's UI. IaC is a good practice that has been gaining attention since the DevOps culture started to grow and it is one of many processes that MLOps shares with it. For example, it makes easier to fast reploy the infrastructure in a disaster scenario or an alternative plan to quickly change providers.
 
-For this example, we will use [Terraform](https://www.terraform.io/) to deploy the needed IBM resources and a Python script to configure the deployment space inside the IBM Watson environment.
+For this example, we will use [Terraform](https://www.terraform.io/) to deploy the needed IBM resources and a Python script to manage the deployment space inside the IBM Watson environment.
 
 ## Requirements
 
-We need to [install the terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and the ibm module.
+We need to [install the terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and the IBM's module.
 
 ### IBM module
 
@@ -31,7 +31,8 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
 
 ## Terraform
 
-Terraform allow an easy and fast way to write a infrastructure code, as it is clean and simple syntax to use and read. It saves the current state and any changes made on the script will only make the changes needed, eg. change an instance name won't reset the instance itself or make any changes on other resources.
+Terraform is an open-source infrastructure as a code software tool created by HashiCorp. It enables users to define and provision an infrastruture in a high-level configuration language. It saves the current state and any changes made on the script will only make the changes needed, eg. change an instance name won't reset the instance itself or make any changes on other resources.
+
 
 ### Terraform script
 
@@ -148,39 +149,8 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 
 ```
 
-If everything correct then run **```terraform apply```** to create the infrastructure.
+If everything is correct then run **```terraform apply```** to create the infrastructure.
 
-## Script Python 
+### Outputs
 
-The current IBM's terraform module is in development and some features are still missing. So we develop a python script to integrate to IBM's DataPak to enable some important configurations, the project and the deployment space.
-
-As both the terraform and python script will work together, the last will have the same proprities as terraform, it will save the state and only make changes as needed. Both will be executeed by a shell script.  
-
-We are going to use the following libs.
-
-```
-import os
-import json
-from ibm_watson_machine_learning import APIClient
-
-class InitializeInfra:
-    def __init__(self):
-
-        self.terraform_output = ".terraform/output.json"
-
-        self.state_name = "infra_state.json"
-        self.state_path = ".terraform"
-
-        self.resources_destroyed = False  
-
-        self.client = None
-
-        self.cos_crn = None
-        self.wml_crn = None
-        self.wml_name = None
-        self.logs = None
-
-        self.space_id = None
-        self.set_credentials()
-        self.run()
-```
+ESCREVER
