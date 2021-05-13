@@ -36,6 +36,8 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+
 
 nav:
     - Home: 'index.md'
