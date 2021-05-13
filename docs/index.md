@@ -29,9 +29,9 @@ The following diagram shows the complete MLOps flow used on the tutorial. SInce 
 
 MLOps Theory
 
-[📚 Learn More About MLOps Theory](#){ .md-button .md-button--primary }
+[📚 Learn More About MLOps Theory](/MLOps/Principles/){ .md-button .md-button--primary }
 
 Implementation Guide
 
-[📃 Follow the Tutorial to Start a Project](#){ .md-button .md-button--primary }
+[📃 Follow the Tutorial to Start a Project](/Structure/project_structure/){ .md-button .md-button--primary }
 

@@ -41,14 +41,14 @@ markdown_extensions:
 
 nav:
     - Home: 'index.md'
-    - MLOps:
+    - MLOps Theory:
       - 'MLOps/Principles/index.md'
       - 'MLOps/Data/index.md'
       - 'MLOps/PipelineAutomation/index.md'
       - 'MLOps/FeatureStore/index.md'
       - 'MLOps/CICDML/index.md'
       - 'MLOps/Monitoring/index.md'
-    - Guide:
+    - Implementation Guide:
       - Introduction:
         - 'Structure/project_structure.md'
         - 'Structure/starting.md'
