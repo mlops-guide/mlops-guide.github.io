@@ -1,4 +1,4 @@
-### Continuous Delivery with CML, Github Actions and Watson ML
+# Continuous Delivery with CML, Github Actions and Watson ML
 
 To deploy or update the deployment without the need to manually do so by the Watson ML UI or by running a script, we use GItHub Actions to run a workflow everytime we make a new release and then deploy the model that way. The complete workflow can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/.github/workflows/deploy_on_release.yaml).
 
