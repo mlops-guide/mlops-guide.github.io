@@ -62,6 +62,7 @@ nav:
       - 'Deployment/index.md'
       - CI/CD for Machine Learning:
         - 'CICD/cml_testing.md'
+        - 'CICD/cml_deploy.md'
       - 'Openscale/index.md'
 
     - Misc.:
