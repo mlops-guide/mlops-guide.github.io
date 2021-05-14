@@ -1,26 +1,37 @@
-# Welcome to MkDocs
+# MLOps Guide
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This site is intended to be a MLOps Guide to help projects and companies to build more reliable MLOps environment. This guide should contemplate the theory behind MLOps and an implementation that should fit for most use cases.
 
-## ASCII Cinema Example
+## What is MLOps?
+
+MLOps is a methodology of operation that aims to facilitate the process of bringing an experimental Machine Learning model into production and maintaining it efficiently. MLOps focus on bringing the methodology of DevOps used in the software industry to the Machine Learning model lifecycle. In that way we can define some of the main features of a MLOPs project:
+
+* Data and Model Versioning
+* Feature Management and Storing
+* Automation of Pipelines and Processes
+* CI/CD for Machine Learning
+* Continuos Monitoring of Models
+
+## What is Contemplated on This Guide?
+
+* Introduction to MLOps Concepts
+* Tutorial for Building a MLOps Environment
+
+## MLOps Environment
+This video shows how an example of workflow with a complete MLOps project. This exact project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions) and is an example end-to-end made for this guide.
 <script id="asciicast-410111" src="https://asciinema.org/a/410111.js" async></script>
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+### Architecture
+The following diagram shows the complete MLOps flow used on the tutorial. SInce the guide is modular, a team can chose to swap tools at any point due to project preferences and use cases.
+<img src="./assets/DiagramMLOPs.png" alt="drawing" />
 
-## Project layout
+## Next
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+MLOps Theory
 
-    data/               # Data versioned by DVC
-    models/             # Models versioned by DVC
-    notebooks/          # Jupyter Notebooks used for the exploratory analysis, development of models, or data manipulation.
-    
-    results/
-    src/
+[📚 Learn More About MLOps Theory](/MLOps/Principles/){ .md-button .md-button--primary }
+
+Implementation Guide
+
+[📃 Follow the Tutorial to Start a Project](/Structure/project_structure/){ .md-button .md-button--primary }
+

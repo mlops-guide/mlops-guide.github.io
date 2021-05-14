@@ -36,21 +36,25 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+
 
 nav:
     - Home: 'index.md'
-    - MLOps:
+    - MLOps Theory:
       - 'MLOps/Principles/index.md'
       - 'MLOps/Data/index.md'
       - 'MLOps/PipelineAutomation/index.md'
       - 'MLOps/FeatureStore/index.md'
       - 'MLOps/CICDML/index.md'
       - 'MLOps/Monitoring/index.md'
-    - Guide:
+    - Implementation Guide:
       - Introduction:
         - 'Structure/project_structure.md'
-        - 'Structure/starting.md'  
-      - 'Infraestrutura/index.md'
+        - 'Structure/starting.md'
+      - Environment:
+        - 'Infraestrutura/Terraform/index.md'
+        - 'Infraestrutura/Python/index.md'
       - Versioning:
         - 'Versionamento/index.md'
         - 'Versionamento/basic_dvc.md'
