@@ -53,11 +53,11 @@ nav:
       - 'Infraestrutura/index.md'
       - Versioning:
         - 'Versionamento/index.md'
-        - 'Versionamento/setup_dvc.md'
         - 'Versionamento/basic_dvc.md'
         - 'Versionamento/pipelines_dvc.md'
       - 'Deployment/index.md'
-      - 'CICD/index.md'
+      - CI/CD for Machine Learning:
+        - 'CICD/cml_testing.md'
       - 'Openscale/index.md'
 
     - Misc.:
