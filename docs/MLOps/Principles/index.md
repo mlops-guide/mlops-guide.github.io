@@ -1,4 +1,0 @@
-# Principles of MLOps
-
-
-

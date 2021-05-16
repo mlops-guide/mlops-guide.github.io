@@ -32,7 +32,7 @@ The following diagram shows the complete MLOps flow used on the tutorial. SInce 
 
 MLOps Theory
 
-[📚 Learn More About MLOps Theory](/MLOps/Principles/){ .md-button .md-button--primary }
+[📚 Learn More About MLOps Theory](/MLOps/Data/){ .md-button .md-button--primary }
 !!! tip
     It is recommended that you learn about the theory before implementing MLOps into your project
 
