@@ -6,6 +6,7 @@ It is also necessary to emphasize the importance of monitoring models in product
 Therefore, we need tools that can test and monitor models to ensure their best performance, in addition to mitigating regulatory, reputation and operational risks. 
 
 
+
 ## What to Monitor?
 The main concepts that should be monitored are hte following:
 
@@ -18,6 +19,7 @@ The main concepts that should be monitored are hte following:
 4. __Bias__: Since ML models capture relationships from training data, it’s likely that they propagate or amplify existing data bias or maybe even introduce new bias. Being able to detect and mitigate bias during the development process is difficult but necessary.
 
 5. __Drift__: The statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes, producing what is known as [concept drift](https://link.springer.com/article/10.1023%2FA%3A1018046501280). 
+
 
 ## Popular Monitoring Tools
 In the following table we can see some of the most popular monitoring tools for machine learning models.

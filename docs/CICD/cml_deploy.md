@@ -1,14 +1,35 @@
-# Continuous Delivery with CML, Github Actions and Watson ML
+# Continous Delivery with CML, Github Actions and Watson ML
 
 To deploy or update the deployment without the need to manually do so by the Watson ML UI or by running a script, we use GItHub Actions to run a workflow everytime we make a new release and then deploy the model that way. 
 
-## Making a Release
+## Creating a Release
+
+1. On GitHub, go to the main page of the repository.
+2. To the right of the page, click on ```Releases``` or ```Latest release```.
+ <div style="text-align:center"><img src="../../assets/cml_release/Capture1.PNG" alt="drawing" /></div>
+3. Click ```Draft a new release``` on the top right.
+ <div style="text-align:center"><img src="../../assets/cml_release/Capture2.PNG" alt="drawing" /></div>
+4. Type the version of the new release.
+5. Click on ```Publish release```.
+ <div style="text-align:center"><img src="../../assets/cml_release/Capture3.PNG" alt="drawing" /></div>
+
+After that, Actions will trigger and the model on Watson ML, next we will explain how to implement this workflow. For more information regarding releases with GitHub, refer to this [article](https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository).
+
+ <div style="text-align:center"><img src="../../assets/cml_release/Capture4.PNG" alt="drawing" /></div>
 
 ## Git Actions
 The workflow downloads the data from dvc the uses credentials, to understand all the previous steps, refer to the [last](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#adding-train-and-evaluate-workflow) section where we explained step by step [what is CML](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#what-is-cml) and [how to implement workflows](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#testing-with-github-actions). The complete workflow can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/.github/workflows/deploy_on_release.yaml).
 
-
+First we set the workflow to trigger every time a new release is created:
 ```yaml 
+name: model-deploy-on-release
+on:
+  release:
+    types: 
+      - 'created'
+```
+Then we execute the following steps:
+```yaml
 run: |
     # Install requirements
     pip install -r requirements.txt

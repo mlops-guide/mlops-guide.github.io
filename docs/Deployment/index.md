@@ -3,7 +3,14 @@
 
 ### Deployment using Python API  
 
-The complete script can be found on our [example reposistory](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py), it receives  the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credentials file.
+To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a micro-service. Since we want to automatise pipelines, we will be creating scripts using the [WML Python API](http://ibm-wml-api-pyclient.mybluemix.net/).
+
+
+!!! Note
+    The complete script can be found on our [example reposistory](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py)
+
+The deployment scrip takes  the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credentials file.
+
 
 ```python
 python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials.yaml
@@ -21,9 +28,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
 
 2. After that, the ```yaml``` files are loaded as dictionaries and the model is loaded (using either ```joblib``` or ```pickle```).
 
-        import pickle
-        import joblib
-
+        
         with open(CRED_PATH) as stream:
             try:
                 credentials = yaml.safe_load(stream)
@@ -97,6 +102,10 @@ Having deployed the model. we can access it's predictions by sending requests to
 
 The payload body is made of the dataframe column names under the ```"fields"``` key and the features under ``` "values"``` .
 
+
+=== "Watson API"
+
+    ```python
     payload = {
         "input_data": [
             {
@@ -107,6 +116,25 @@ The payload body is made of the dataframe column names under the ```"fields"``` 
     }
 
     result = client.deployments.score(DEPLOYMENT_UID, payload)
+    ```
+
+=== "Requests"
+
+    ```python
+    import requests
+
+    url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments?space_id=<string>&tag.value=<string>&asset_id=<string>&version=2020-09-01"
+
+    payload = {}
+    headers= {}
+
+    response = requests.request("GET", url, headers=headers, data = payload)
+
+    print(response.text.encode('utf8'))
+
+    ```
+
+
 
 The model response will contain the scoring result containing prediction and corresponding  probability. In the case of a binary classifier, the response will have the following format:
 
@@ -123,9 +151,15 @@ The model response will contain the scoring result containing prediction and cor
     [0, [0.9639766912352016, 0.03602330876479841]],
     [1, [0.049694416576558154, 0.9503055834234418]],
 
+!!! Warning
+    This consumes CUH. Watson Machine Learning CUH are used for running experiments, so there is a limit on how many times you can make requests to the model on a Free Tier.
 
 ### Updating the Model
-Updating the asset contaning the model and/or updating the deployment. The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our template repository.
+Updating the asset contaning the model and/or updating the deployment. 
+
+
+!!!Note
+    The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our template repository.
 
 1. Firstly we need to update the model asset in WML by passing the new model as well as a name.
 
@@ -162,7 +196,12 @@ Updating the asset contaning the model and/or updating the deployment. The compl
 
 
 ### Model Rollback
-1. We have previously created revisions of a model, to rollback the model version, we'll list all the revisions made:
+We have previously created revisions of a model, to rollback the model version, we'll list all the revisions made.
+
+!!!Note 
+    [Complete script](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/0.0.11/src/scripts/Pipelines/model_redeploy_pipeline.py)
+
+1. Listing the revisions.
 
         client.repository.list_models_revisions(MODEL_GUID)
 
