@@ -37,8 +37,9 @@ theme:
 markdown_extensions:
   - admonition
   - attr_list
-
-
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  
 nav:
     - Home: 'index.md'
     - MLOps Theory:
