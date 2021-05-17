@@ -31,3 +31,15 @@ Defining the level of automation has a crucial impact on the business behind the
 1. **Manual Process:** Full experimentation pipeline executed manually using Rapid Application Development(RAD) tools, like Jupyter Notebooks. Deployments are also executed manually.
 2. **Machine Learning automation:** Automation of the experimentation pipeline which includes data and model validation.
 3. **CI/CD pipelines:** Automatically build, test and deploy of ML models and ML training pipeline components, providing a fast and reliable deployment.
+
+## Common Tools for Machine Learning Pipeline Automation
+
+Currently there are many tools used to create and automate Machine Learning pipelines, experiments and any type of process. Below there is a list of some of there services.
+
+| Tools                | License           | Developer  | Observations |
+| -------------------- |:-----------------:|:----------:|:------------ |
+| DVC                  | Open-source       | Iterative  | DVC can be used to make Data Pipelines, which can be automated and reproduced. Very useful if already using DVC for Data and Model versioning. Easily configured and run. Language and framework agnostic. |
+| Tensorflow Extended (TFX) | Open-source       | Tensorflow | Used for production Machine Learning pipelines. Havily integrated with Google and GCP. Only works with Tensorflow.
+| Kubeflow             | Open-source       | Google, Kubeflow | Kubeflow can build automated pipelines and experiments. Intended to build a complete end-to-end solution for Machine learning, being able to also serve and monitor models. Uses Kubernetes and is based on Tensorflow Extended. Works with Tensoorflow and Pytorch. |
+| MLflow               | Open-source       | MLflow Project | Open-source platform for the machine learning lifecycle. Can be used with Python, Conda and Docker. Large community. |
+

@@ -19,12 +19,12 @@ The main concepts that should be monitored are hte following:
 
 5. __Drift__: The statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes, producing what is known as [concept drift](https://link.springer.com/article/10.1023%2FA%3A1018046501280). 
 
-## Popular Monitoring Tools
-In the following table we can see some of the most popular monitoring tools for machine learning models.
+## Popular Serving and Monitoring Tools
+Most tools used for serving Machine Learning models have monitoring tools. In many suites like IBM Watson, Microsoft Azure and Amazon Sagemaker there is components entirely dedicated to monitoring, like IBM Watson OpenScale. Below there is a list of some of the popular tools used for serving and monitoring models.
 
 | Tools                | License           | Developer  | Observations |
 | -------------------- |:-----------------:|:----------:|:------------ |
 | IBM Watson OpenScale | Proprietary        | IBM        | Monitors models deployed to IBM Watson Machine Learning. Monitors fairness, explainability and drift. Has tools for managing and correcting problems or inaccuracies in production.
-| OpenShift            | Open-source        | Red Hat    | |
+| OpenShift            | Open-source        | Red Hat    | Kubernetes based system able to deploy various types of applications. It is platform agnostic and can be used for any type of application. Can be useful when a model is heavily integrated into a microsservice environment.|
 | Seldon Core          | Open-source        | SeldonIO   | Deploys models into microsservices with Advanced Metrics, Request Logging, Explainers, Outlier Detectors, A/B Tests, Canaries and more. Platform agnostic and works with many Machine Learning frameworks |
-| Tensorflow Extended  | Open-source        | Tensorflow | Deploy Tensorflow Models as API and has monitoring capabilities. |
+| Tensorflow Extended (TFX) | Open-source        | Tensorflow | Deploy Tensorflow Models as API and has monitoring capabilities. |
