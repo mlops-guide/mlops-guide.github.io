@@ -23,19 +23,19 @@ It's important to note that DVC is free, open-source and platform agnostic, so i
 
 DVC can be installed as a Python Library with pip package manager:
 
-```
+```bash
 $ pip install dvc
 ```
 
 Depending on which remote storage interface you're using, it's important to install optional dependencies(s3, azure, gdrive, gs, oss, ssh or all). In this  project  we are using S3 interface to connect with IBM Cloud Object Storage.
 
-```
+```bash
 $ pip install "dvc[s3]"
 ```
 
 It's also possible to install DVC using conda:
 
-```
+```bash
 $ conda install -c conda-forge mamba
 $ mamba install -c conda-forge dvc
 $ mamba install -c conda-forge dvc-s3
@@ -47,7 +47,7 @@ $ mamba install -c conda-forge dvc-s3
 
 After installing DVC, you can go to your project's folder and initialize both Git and DVC:
 
-```
+```bash
 $ git init
 $ dvc init
 ```
@@ -61,13 +61,13 @@ ascii_cinema do git status
 Finally, we are going to setup our remote storage to keep our datasets and models. 
 
 With ```dvc remote add``` you can point to your remote storage.
-```
+```bash
 $ dvc remote add -d remote-storage s3://bucket_namme/folder/
 ```
 
 DVC uses by default AWS CLI to authenticate. IBM Cloud Object Storage works with S3 interface and also AWS, the only additional step here is to configure the IBM endpoint and configure the credentials.
 
-```
+```bash
 $ dvc remote modify remote-storage endpointurl \
                     https://s3.us-south.cloud-object-storage.appdomain.cloud
 ```
@@ -76,7 +76,7 @@ To configure the credentials you can use default ```~/.aws/credentials``` file a
 
 
 Run:
-```
+```bash
 $ dvc remote modify myremote profile myprofile
 ```
 Modify ```~/.aws/credentials```
@@ -93,7 +93,7 @@ aws_secret_access_key = ************
 
 or
 
-```
+```bash
 $ dvc remote modify credentialpath /path/to/creds
 ```
 

@@ -1,5 +1,8 @@
 # MLOps Guide
 
+!!! warning
+    **This guide is not completed yet**. Be careful before using it as some parts might be missing or still unfinished.
+
 This site is intended to be a MLOps Guide to help projects and companies to build more reliable MLOps environment. This guide should contemplate the theory behind MLOps and an implementation that should fit for most use cases.
 
 ## What is MLOps?
@@ -29,7 +32,9 @@ The following diagram shows the complete MLOps flow used on the tutorial. SInce 
 
 MLOps Theory
 
-[📚 Learn More About MLOps Theory](/MLOps/Principles/){ .md-button .md-button--primary }
+[📚 Learn More About MLOps Theory](/MLOps/Data/){ .md-button .md-button--primary }
+!!! tip
+    It is recommended that you learn about the theory before implementing MLOps into your project
 
 Implementation Guide
 

@@ -5,9 +5,10 @@ It is also necessary to emphasize the importance of monitoring models in product
 
 Therefore, we need tools that can test and monitor models to ensure their best performance, in addition to mitigating regulatory, reputation and operational risks. 
 
-## What to Monitor?
 
-The main concepts that should be monitored are the following:
+
+## What to Monitor?
+The main concepts that should be monitored are hte following:
 
 1. __Performance__: Being able to evaluate a model’s performance based on a group of metrics and logging its decision or outcome can help give directional insights or compared with historical data. These can be used to compare how well different models perform and therefore which one is the best.
 

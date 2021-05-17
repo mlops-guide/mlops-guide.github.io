@@ -14,7 +14,7 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
 
   To install IBM's module paste the following code into your terraform script then run ```terraform init```.
   
-```
+```tf
   terraform {
     required_providers {
       ibm = {
@@ -36,7 +36,7 @@ Terraform is an open-source infrastructure as a code software tool created by Ha
 
 ### Terraform script
 
-```
+```tf
 #### MODULE
 
   terraform {
@@ -94,7 +94,7 @@ This script will create:
 
 ### Terraform plan and apply
 If we run the command ```terraform plan``` the following output shows all the changes that will be made, in this case, create all the resources.
-```
+```bash
 Terraform will perform the following actions:
 
   # ibm_resource_instance.cos will be created
@@ -157,7 +157,7 @@ After everything is set, terraform create a state file with the resources metada
 
 The following script is an output file with the metadatas that will be used on the next steps.
 
-```
+```tf
 output "cos_crn" {
   value = ibm_resource_instance.cos.crn
 }

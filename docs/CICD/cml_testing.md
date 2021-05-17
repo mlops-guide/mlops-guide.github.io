@@ -9,13 +9,13 @@ Technology Agnostics: Build pipelines with Github or Gitlab and run experiments 
 Since we are using Github as our Git repository, Github Actions will be used to set up CML. Github Actions is managed by Github, so there is no need to worry about scale and operate the infrastructure just as other tools like Jenkins.
 
 
-## Testing Setup
+## Testing With Github Actions
 
-First, we will make sure our tests created at the [Testing with Pytest and Black]() section are being executed every time that there is a new *push* to the repository on Github.
+First, we will make sure our tests created at the [Testing with Pytest and Black](/CICD/tests/) section are being executed every time that there is a new *push* to the repository on Github. This important in order to achieve redundancy in testing the project, and avoid making sure the code runs without errors on any environment and not just the developer's computer.
 
-To do this is very simple, just create a file named **test_on_push.yaml** at ```.github/workflows/``` folder. The content of the file should be:
+To do this is very simple. If you used cookiecutter you should alreayd have a file named **test_on_push.yaml** at ```.github/workflows/``` folder. The content of the file should be:
 
-```
+```yaml
 name: Python Package and Test
 	 
 	on: [push]
@@ -26,7 +26,7 @@ name: Python Package and Test
 	 runs-on: ubuntu-latest
 	 strategy:
 	 matrix:
-	 python-version: [3.6]
+	 	python-version: [3.6]
 	 
 	 steps:
 	 - uses: actions/checkout@v2
@@ -47,7 +47,56 @@ name: Python Package and Test
 	 black . --check
 ```
 
- explicar cada comando que nem foi feito em baixo
+Now, we should take a look into those commands.
+
+***Choosing when this action will run***
+```yaml
+on: [push]
+```
+Makes it run every time there is a push on the repository
+
+
+***Setting up a Github Instance to run it***
+```yaml
+runs-on: ubuntu-latest
+```
+Github will setup a free Ubuntu instance for us, using the latest official release.
+
+***Chosing the right version of Python***
+```yaml
+matrix:
+	python-version: [3.6]
+```
+
+***Installing test requirements***
+```yaml
+python -m pip install --upgrade pip
+pip install pytest black
+```
+
+***Installing project requirements***
+```yaml
+if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+```
+
+***Running Pytest***
+```yaml
+- name: Test with pytest
+	run: |
+	pytest
+```
+
+***Running Black check***
+```yaml
+- name: Python Black
+	 run: |
+	 black . --check
+```
+This checks that every Python file is formatted according to Black.
+
+If all tests pass the commit pushed to the repository will receive a green check show it has no errors. 
+
+![green check](../assets/CICD/green_check.png)
 
 ## Pipeline Test 
 
@@ -79,7 +128,7 @@ Github Secrets is a repository tool that encrypts credentials to be used as envi
 
 Just like we did at the *Testing Setup*, let's create a file named **train_evaluate.yaml** at the ```.github/workflows/``` folder, which content should be:
 
-```
+```yaml
 name: model-training-evaluate
 	on: [push]
 	jobs:
@@ -118,47 +167,47 @@ name: model-training-evaluate
 Let's dig into each command:
 
 ***Setting up a CML pre-configured container***
-```
+```yaml
 container: docker://dvcorg/cml-py3:latest
 ```
 
 ***Setting up environment credentials for IBM COS***
-```
+```yaml
 env: repo_token: ${{ secrets.GITHUB_TOKEN }} 
 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
 AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
 ```
 
 ***Installing requirements***
-```
+```yaml
 pip install -r requirements.txt
 ```
 
 ***Pull the versioned data and reproduce the full pipeline of training and evaluation***
-```
+```yaml
 dvc pull --run-cache
 dvc repro
 ```
 
 ***Formatting report section tittles***
-```
+```yaml
 echo "## Metrics" >> report.md
 echo -e "## Plots\n### ROC Curve" >> report.md
 echo -e "\n### Precision and Recall Curve" >> report.md
 ```
 
 ***Comparing metrics and publishing it to the report***
-```
+```yaml
 dvc metrics diff master --show-md >> report.md
 ```
 
 ***Publishing figures from the experiment to the report***
-```
+```yaml
 cml-publish ./results/roc_curve.png --md >> report.md
 cml-publish ./results/precision_recall_curve.png --md >> report.md
 ```
 
 ***Return the final report formatted as a comment on the Commit or Pull Request***
-```
+```yaml
 cml-send-comment report.md
 ```
