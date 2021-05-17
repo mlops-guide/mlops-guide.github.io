@@ -2,6 +2,9 @@
 
 In the following sections we will go over the steps for the implementation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson. as well as instructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
 
+!!! Note
+        We won't get into how to create predictive models or preprocessing data, since our main objective is to discuss MLOps and create a development cycle using those concepts.
+
 
 ### Project Tools
 The main tools discussed in the guide are shown in the following table. As the guide is intended to be modular, a team can swap tools for others depending on the project necessities or preferences.
@@ -66,7 +69,6 @@ The Jupyter Notebook is an open-source web application that allows you to create
 
 1. __Access to Functions__ : In the ```model.py``` script, we define the ```train``` and ```evaluate``` function, where the model is declared and trained and the metrics for the evaluation are defined. These functions can be called by other scripts such as ```train.py``` and ```evaluate.py``` so we can create pipelines to train the model on a remote instance or evaluate an already trained model file in a consistent form.
 
-
         def train(data, params):
                 ...
                 return pipeline, logs
@@ -75,6 +77,6 @@ The Jupyter Notebook is an open-source web application that allows you to create
         def evaluate(data, pipeline, OUTPUT_PATH):
                 ...
                 return results
-
+        
 In our project we choose to use notebooks as a form of experimentation of models or processes and the script as a more 'definitive' form for the reasons cited above.
 

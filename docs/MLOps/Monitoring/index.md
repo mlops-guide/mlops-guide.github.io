@@ -6,6 +6,7 @@ It is also necessary to emphasize the importance of monitoring models in product
 Therefore, we need tools that can test and monitor models to ensure their best performance, in addition to mitigating regulatory, reputation and operational risks. 
 
 
+
 ## What to Monitor?
 The main concepts that should be monitored are hte following:
 
@@ -20,7 +21,7 @@ The main concepts that should be monitored are hte following:
 5. __Drift__: The statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes, producing what is known as [concept drift](https://link.springer.com/article/10.1023%2FA%3A1018046501280). 
 
 ## Popular Serving and Monitoring Tools
-Most tools used for serving Machine Learning models have monitoring tools. In many suites like IBM Watson, Microsoft Azure and Amazon Sagemaker there is components entirely dedicated to monitoring, like IBM Watson OpenScale. Below there is a list of some of the popular tools used for serving and monitoring models.
+Most tools used for serving Machine Learning models have monitoring tools. In many suites like IBM Watson, Microsoft Azure and Amazon Sagemaker there is components entirely dedicated to monitoring, like IBM Watson OpenScale. In the following table we can see some of the most popular monitoring tools for machine learning models.
 
 | Tools                | License           | Developer  | Observations |
 | -------------------- |:-----------------:|:----------:|:------------ |

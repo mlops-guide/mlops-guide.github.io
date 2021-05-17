@@ -1,4 +1,4 @@
-# Monitoring with IBM Opescale
+# Monitoring with IBM Openscale
 
 ### Setting Up the Environment
 1. Creating Database
