@@ -2,21 +2,24 @@
 
 After learning how to version data or models using DVC it's time to build your experiment pipeline.
 
-Let's assume that we are using the last section dataset as a source of data for training a classification model. Let's also assume that we have three stages in this experiment:
+Let's assume that we are using the last section dataset as a data source for training a classification model. Let's also consider that we have three stages in this experiment:
 
 - Preprocessing your data(extract features...)
 - Train the model
 - Evaluate the model
 
-Here you should have in hands our scripts: **preprocess.py**, **train.py**, **evaluate.py** and **model.py**.
+Here you should have in hands our scripts: [**preprocess.py**, **train.py**, **evaluate.py** and **model.py**](https://github.com/MLOPsStudyGroup/dvc-gitactions/tree/master/src).
+
+!!! warning
+    Just as in the last section, we will use the help of the [template repository](https://github.com/MLOPsStudyGroup/dvc-gitactions) to explain and build DVC's pipelines. Feel free to use your scripts and create specific pipelines for your project needs.
 
 ## Creating pipelines
 
 DVC builds a pipeline based on three components: Inputs, Outputs, and Command. So for the preprocessing stage, this would look like this:
 
- - Inputs: dataset.csv and preprocess.py script
- - Outputs: dataset_ready.csv
- - Command: python preprocess.py dataset.csv
+ - Inputs: weatherAUS.csv.csv and preprocess.py script
+ - Outputs: weatherAUS_processed.csv.csv
+ - Command: python preprocess.py weatherAUS.csv
 
 So to create this stage of preprocessing, we use ```dvc run```:
 
@@ -104,6 +107,8 @@ results/metrics.json  f1         0.9074   0.90747  8e-05
 results/metrics.json  precision  0.85554  0.8719   0.01636
 results/metrics.json  recall     0.96594  0.94607  -0.01987
 ```
+
+The metrics configuration is saved at the ***dvc.yaml*** file.
 
 
 ## Control the experiment

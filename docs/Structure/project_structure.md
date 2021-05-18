@@ -1,6 +1,6 @@
 # Tools and Project Structure
 
-In the following sections we will go over the steps for the implementation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson. as well as instructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
+In the following sections we will go over the steps for the implementation of a MLOps Proof-of-Concept pipeline using IBM Watson tools and services. A template repository with a complete MLOps cycle: versioning data, generating reports on pull requests and deploying the model on releases with DVC and CML using Github Actions and IBM Watson as well as instructions to run the project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions).
 
 !!! Note
         We won't get into how to create predictive models or preprocessing data, since our main objective is to discuss MLOps and create a development cycle using those concepts.

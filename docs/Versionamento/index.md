@@ -1,6 +1,6 @@
 # What is DVC?
 
-In the [MLOps Concepts]('MLOps/Data/index.md') section we were able to show how versioning data, models, and pipelines are so important in an ML project. In this section, we will cover DVC and how you can set up this tool to version your data, models and automatize pipelines.
+In the [MLOps Concepts](../MLOps/Data/index.md) section we were able to show how versioning data, models, and pipelines are so important in an ML project. In this section, we will cover DVC and how you can set up this tool to version your data, models and automatize pipelines.
 
 DVC, which goes by Data Version Control, is essentially an experiment management tool for ML projects. DVC software is built upon [Git](https://git-scm.com) and its main goal is to *codify* data, models and pipelines through the command line.
 

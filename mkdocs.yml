@@ -69,7 +69,7 @@ nav:
         - 'CICD/cml_testing.md'
         - 'CICD/cml_deploy.md'
       - 'Openscale/index.md'
-
+    - 'Workflow/index.md'
     - Misc.:
       - 'Testes/index.md'
 
