@@ -5,7 +5,7 @@
 [Watson Machine Learning](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html) (WML) is as servie from the IBM Cloud suite that supports popular frameworks such as TensorFlow, PyTorch, and Keras to build and deploy models. Using this tool we can store, version and deploy models via online deployment. 
 
 After creating and training a ML model we can upload it as an *Asset* in the Deployment Space, in the IBM cloudpak. When we create a new deployment, we choose what model asset we want the deployment to reference:
-<img src="../assets/Deployment/word_deploy_space_1.1.png" alt="drawing" />
+<img src="../../assets/Deployment/word_deploy_space_1.1.png" alt="drawing" />
 [IBM Dataplatform Deocumentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/wmls/wmls-deploy-overview.html) 
 
 ### Deployment using Python API  
