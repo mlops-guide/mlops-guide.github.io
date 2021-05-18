@@ -21,20 +21,19 @@ To guarantee that the experimentation of the data science team will become a mod
  - **Implementation:** Especially with complex models, different implementations can have different results. This is important to keep in mind when debugging.
  - **Environment:**: It's crucial to have the same runtime configurations among all data scientists.
 
-## Common Tools
+## Popular Versioning Tools
 
 Merging data, model, and code versioning isn't an easy task but fortunately, there are several tools being created or constantly updated to feel the need for data and model versioning. These tools can offer ways for transforming data with pipelines to configuring models.
 
 We listed below some of these tools available for usage:
 
-Tool | License | Developer
-:---: | :---: | :---:
-Watson ML | Proprietary | IBM
-DVC | Open-source | iterative
-Pachyderm | Open-source | Pachyderm
-MLflow |  Open-source | Databricks
-Sagemaker | Proprietary | Amazon
-
+Tool      | License | Developer | Observations |
+--------- | :-----: | :-------: | :----------- |
+IBM Watson ML | Proprietary | IBM | Focused on model versioning |
+DVC       | Open-source | Iterative | Popular lightweight open-source tool focused on data, model and pipeline versioning. Can be easily integrated with CML. |
+Pachyderm | Open-source | Pachyderm | Data platform built on Docker and Kubernetes. Focused on Version Control and automating workloads with parallelization. |
+MLflow    |  Open-source | Databricks | Popular tool for many parts of the Machine Learning lifecycle, including versioning of processes and experiments. Can be easily integrated with other tools |
+Git LFS (Large File System) | Open-source | Atlassian, GitHub, and others |  Git extension that permits large files on Git repositories. Can be used to share large data files and models, using Git versioning. |
 
 
 

@@ -6,7 +6,7 @@ So now that your repository is initialized and connected with your remote storag
 
 Suppose you have downloaded our _weatherAUS.csv_ file inside your data folder and you want to add this file under the data version control of your project. The first step is to put this file under DVC local control and DVC cache by running:
 
-```
+```bash
 $ dvc add data/weatherAUS.csv
 ```
 
@@ -17,7 +17,7 @@ $ dvc add data/weatherAUS.csv
 
 These metafiles with ```.dvc``` extension are YAML files that contain some key-value pair information about your data or model. Here it's an example:
 
-```
+```yaml
 outs:
   - md5: a304afb96060aad90176268345e10355
     path: weatherAUS.csv
@@ -35,13 +35,13 @@ To see how DVC has your data under control, you can remove your ```weatherAUS.cs
 
 So now DVC and Git have your data under control. To finally allocated this data in your remote storage you need to run:
 
-```
+```bash
 $ dvc push data/weatherAUS.csv
 ```
 
 After that, your data is already in your remote storage and you just need to let Git know that by:
 
-```
+```bash
 $ git commit -m 'data push'
 ```
 
@@ -49,13 +49,13 @@ $ git commit -m 'data push'
 
 Finally,  you can checkout to your experiment branch and pull your dataset related to that experiment:
 
-```
+```bash
 $ git checkout branch_name
 ```
 
 And to pull the dataset from your remote storage, just run:
 
-```
+```bash
 $ dvc pull
 ```
 

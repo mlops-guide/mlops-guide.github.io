@@ -5,7 +5,7 @@ The current IBM's terraform module is in development and some features are still
 ### Authentication
 
 The following code is used to authenticate to the provider, note that it uses the same environment variable as terraform.
-```
+```python
 import os
 import sys
 from pprint import pprint
@@ -33,7 +33,7 @@ def authentication():
 
 To create a deployment space, we need to get some metadata from the resources created by the terraform script. Here we use the output defined on terraform.
 
-```
+```python
 def terraform_output(terraform_path=TERRAFORM_OUTPUT):
 
     output = dict(json.load(open(terraform_path)))['outputs']
@@ -54,7 +54,7 @@ def terraform_output(terraform_path=TERRAFORM_OUTPUT):
 
 Now with the metadata in hands, we can finally create a deployment space.
 
-```
+```python
 def create_deployment_space(cos_crn, wml_name, wml_crn, space_name='default', description = ""):
 
     metadata = { 
@@ -78,7 +78,7 @@ def create_deployment_space(cos_crn, wml_name, wml_crn, space_name='default', de
 
 With the space created, now we have the *space_id*, the following function is used to retrieve it. This info will be used on other scripts that will be shown on next pages.
 
-```
+```python
 def update_deployment_space(new_name, space_id):
 
     metadata = {

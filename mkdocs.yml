@@ -39,11 +39,14 @@ markdown_extensions:
   - attr_list
   - pymdownx.superfences
   - pymdownx.tabbed
-  
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.snippets
+
+
 nav:
     - Home: 'index.md'
-    - MLOps Theory:
-      - 'MLOps/Principles/index.md'
+    - Principles of MLOps:
       - 'MLOps/Data/index.md'
       - 'MLOps/PipelineAutomation/index.md'
       - 'MLOps/FeatureStore/index.md'
@@ -62,6 +65,7 @@ nav:
         - 'Versionamento/pipelines_dvc.md'
       - 'Deployment/index.md'
       - CI/CD for Machine Learning:
+        - 'CICD/tests.md'
         - 'CICD/cml_testing.md'
         - 'CICD/cml_deploy.md'
       - 'Openscale/index.md'

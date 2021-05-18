@@ -31,17 +31,16 @@ Those types of data are combined inside and form two types of store:
 
 ## Common Architecture
 ![Feature Store Diagram](FeatureStoreDiagram.png "Feature Store Inside Diagram")
-## Common Tools
+## Popular Feature Stores
 Many companies relay on proprietary software to develop Feature Stores, since many try to make a component that fits into their exactly use-case, such a as:
 
 
-| Tools        | License           | Developer  |
-| ------------ |:-----------------:|:----------:|
-| Michelangelo | Proprietary       | Uber       |
-| Zipline      | Proprietary       | AirBnB     |
-| Metaflow     | Proprietary       | Netflix    |
-| Feast        | Open-source       | Feast-dev, Tecton|
-| Hopsworks    | Open-source       | LogicalClocks|
-| Butterfree   | Open-source       | QuintoAndar|
-
+| Tools        | License           | Developer  | Observations |
+| ------------ |:-----------------:|:----------:|:------------ |
+| Michelangelo | Proprietary       | Uber       | Uber's platform for Machine Learning, focused on sharing feature pipelines with various teams. (Not open for public usage)
+| Zipline      | Proprietary       | AirBnB     | Airbnb’s Declarative Feature Engineering Framework (Not open for public usage)
+| Metaflow     | Proprietary       | Netflix    | Netflix's human friendly Python/R library for Machine Learning. Has robust Feature Engineering and other attributes. (Open for public usage and  contribution)
+| Feast        | Open-source       | Feast-dev, Tecton| Popular open-source Feature Store. Very complete and competent data platform with Python, Spark and Redis. Integrates with many systems and is very customizable. Can be set up with Kubernetes.
+| Hopsworks    | Open-source       | LogicalClocks| Open-source Feature Store. Used by Amazon Sagemaker. Very hardware demanding.
+| Butterfree   | Open-source       | QuintoAndar| Open-source tool used for building Feature Stores using Python and Spark.
 
