@@ -1,9 +1,16 @@
 # Deployment with Watson Machine Learning
 
+### What is Watson Machine Learning?
+
+[Watson Machine Learning](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html) (WML) is as servie from the IBM Cloud suite that supports popular frameworks such as TensorFlow, PyTorch, and Keras to build and deploy models. Using this tool we can store, version and deploy models via online deployment. 
+
+After creating and training a ML model we can upload it as an *Asset* in the Deployment Space, in the IBM cloudpak. When we create a new deployment, we choose what model asset we want the deployment to reference:
+<img src="../assets/Deployment/word_deploy_space_1.1.png" alt="drawing" />
+[IBM Dataplatform Deocumentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/wmls/wmls-deploy-overview.html) 
 
 ### Deployment using Python API  
 
-To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a micro-service. Since we want to automatise pipelines, we will be creating scripts using the [WML Python API](http://ibm-wml-api-pyclient.mybluemix.net/).
+To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a web service. Since we want to automatise pipelines, we will be creating scripts using the [WML Python API](http://ibm-wml-api-pyclient.mybluemix.net/).
 
 
 !!! Note
@@ -125,7 +132,15 @@ The payload body is made of the dataframe column names under the ```"fields"``` 
 
     url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments?space_id=<string>&tag.value=<string>&asset_id=<string>&version=2020-09-01"
 
-    payload = {}
+    payload = {
+        "input_data": [
+            {
+                "fields": X.columns.to_numpy().tolist(),
+                "values": X.to_numpy().tolist(),
+            }
+        ]
+    }    
+    
     headers= {}
 
     response = requests.request("GET", url, headers=headers, data = payload)
