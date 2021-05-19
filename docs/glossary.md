@@ -10,8 +10,8 @@ A short description of each topic or subtopic.
         - [__Tools and Project Structure:__](../Structure/project_structure/) Introduction to the project structure and tools that will be used.
         - [__Starting a New Project with Cookiecutter:__](../Structure/starting/) Introduction to  Cookiecutter and how to create a new project based on our template.
     - __Enviroment__
-        - [__Setting Up the IBM Enviroment with Terraform:__](../infraestrutura/Terraform/) Using Terraform to set up the IBM Enviroment via code.
-        - [__Managing the deployment space:__](../infraestrutura/Python/) How to manage IBM's tools with Terraform.
+        - [__Setting Up the IBM Enviroment with Terraform:__](../Infraestrutura/Terraform/) Using Terraform to set up the IBM Enviroment via code.
+        - [__Managing the deployment space:__](../Infraestrutura/Python/) How to manage IBM's tools with Terraform.
 
     - __Versioning__
         - [__What is DVC?:__](../Versionamento/) Introduction to DVC, installation and how to set-up remote storage.
