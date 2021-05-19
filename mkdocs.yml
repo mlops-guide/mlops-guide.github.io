@@ -74,5 +74,7 @@ nav:
 
 extra_css:
   - ASCII_cinema/asciinema-player.css
+  - _css/extra_css.css
 extra_javascript:
   - ASCII_cinema/asciinema-player.js
+  - _js/extra_js.js
