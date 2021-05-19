@@ -6,15 +6,20 @@ Infrastructure as a code(IaC) is a process of managing and provisioning mechanis
 
 For this example, we will use [Terraform](https://www.terraform.io/) to deploy the needed IBM resources and a Python script to manage the deployment space inside the IBM Watson environment.
 
+
+## What is Terraform?
+
+Terraform is an open-source infrastructure as a code software tool created by HashiCorp. It enables users to define and provision an infrastruture in a high-level configuration language. It saves the current state and any changes made on the script will only make the changes needed, eg. change an instance name won't reset the instance itself or make any changes on other resources.
+
 ## Requirements
 
 We need to [install the terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and the IBM's module.
 
-### IBM module
+## IBM module
 
   To install IBM's module paste the following code into your terraform script then run ```terraform init```.
   
-```tf
+```
   terraform {
     required_providers {
       ibm = {
@@ -29,14 +34,9 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
   }
 ```
 
-## Terraform
+## Terraform script
 
-Terraform is an open-source infrastructure as a code software tool created by HashiCorp. It enables users to define and provision an infrastruture in a high-level configuration language. It saves the current state and any changes made on the script will only make the changes needed, eg. change an instance name won't reset the instance itself or make any changes on other resources.
-
-
-### Terraform script
-
-```tf
+```
 #### MODULE
 
   terraform {
@@ -88,13 +88,13 @@ This script will create:
 - Watson machine learning resource
 - IBM COS instance
 
-### Authentication
+## Authentication
 
   Before you continue, you will need to create an **API Key** and assign it to an environment variable called **IBMCLOUD_API_KEY**
 
-### Terraform plan and apply
+## Terraform plan and apply
 If we run the command ```terraform plan``` the following output shows all the changes that will be made, in this case, create all the resources.
-```bash
+```
 Terraform will perform the following actions:
 
   # ibm_resource_instance.cos will be created
@@ -151,13 +151,13 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 
 If everything is correct then run **```terraform apply```** to create the infrastructure.
 
-### Outputs
+## Outputs
 
 After everything is set, terraform create a state file with the resources metadata. This file can be quite overhelming to work with and we will need some of this metadata. That's the use for an output file, when we run ```terraform apply```, it detects this file and create a section on the state file with the information needed and it is easier to work with.
 
 The following script is an output file with the metadatas that will be used on the next steps.
 
-```tf
+```
 output "cos_crn" {
   value = ibm_resource_instance.cos.crn
 }

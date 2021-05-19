@@ -58,6 +58,7 @@ nav:
         - 'Structure/project_structure.md'
         - 'Structure/starting.md'
       - Environment:
+        - 'Infraestrutura/Auth/index.md'
         - 'Infraestrutura/Terraform/index.md'
         - 'Infraestrutura/Python/index.md'
       - Versioning:
