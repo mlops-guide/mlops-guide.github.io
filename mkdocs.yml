@@ -46,6 +46,7 @@ markdown_extensions:
 
 nav:
     - Home: 'index.md'
+    - Contents: 'glossary.md'
     - Principles of MLOps:
       - 'MLOps/Data/index.md'
       - 'MLOps/PipelineAutomation/index.md'
