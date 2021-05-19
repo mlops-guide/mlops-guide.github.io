@@ -1,7 +1,8 @@
 # Monitoring with IBM Openscale
 
 ### Setting Up the Environment
-1. Creating Database
+1. Creating OpenScale service from the [Services Catalog](https://cloud.ibm.com/catalog/services/watson-openscale)
+   <div style="text-align:center"><img src="../assets/Openscale/select-wos.png" alt="drawing" /></div>
 
 2. Creating Machine Learning Provider
 
