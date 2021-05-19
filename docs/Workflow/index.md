@@ -15,7 +15,7 @@ Let's start by cloning the project repository you will be working on. We need to
 !!! tip
     It's a good practice to create a virtual environment for each project you work. You can do that using [venv](https://docs.python.org/3/library/venv.html) or [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
-{ VIDEO 1 }
+<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/workflow/part1.cast"></asciinema-player>
 ```
 git clone https://github.com/MLOPsStudyGroup/dvc-gitactions.git
 cd dvc-gitactions

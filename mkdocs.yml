@@ -10,7 +10,7 @@ theme:
   logo: assets/logo-white.png
 
   features:
-    - navigation.expand
+    - navigation.extend
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -69,9 +69,7 @@ nav:
         - 'CICD/cml_testing.md'
         - 'CICD/cml_deploy.md'
       - 'Openscale/index.md'
-    - 'Workflow/index.md'
-    - Misc.:
-      - 'Testes/index.md'
+    - Project Workflow: 'Workflow/index.md'
 
 extra_css:
   - ASCII_cinema/asciinema-player.css
