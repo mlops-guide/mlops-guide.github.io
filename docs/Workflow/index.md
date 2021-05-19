@@ -19,7 +19,7 @@ Let's start by cloning the project repository you will be working on. We need to
 ```
 git clone https://github.com/MLOPsStudyGroup/dvc-gitactions.git
 cd dvc-gitactions
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 pre-commit install
 ```
 
@@ -32,7 +32,8 @@ Your environment is ready! So now let's:
 - Reproduce the main experiment(Optional)
 - See current metrics
 
-{ VIDEO 2 }
+<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/workflow/part2.cast"></asciinema-player>
+
 ```
 dvc pull
 dvc dag
@@ -82,7 +83,7 @@ pipe = Pipeline(
 
 Second, let's create a new branch at our repository to version this new experiment. After that, we can reproduce the experiment and see how the new metrics compare to the current model metrics.
 
-{ VIDEO 3 }
+<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/workflow/part3.cast"></asciinema-player>
 ```
 git checkout -b LogisticRegression
 dvc repro
@@ -104,7 +105,7 @@ Our experiment is ready, now let's:
 - Upload to our branch in our Github repository
 
 
-{ VIDEO 4 }
+<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/workflow/part4.cast"></asciinema-player>
 ```
 black .
 git add .
