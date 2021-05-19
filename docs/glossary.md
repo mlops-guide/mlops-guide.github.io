@@ -1,7 +1,7 @@
 
 # Contents
 
-
+A short description of each topic or subtopic.
 
 - __MLOps Theory:__ A brief introduction to the main Principles of MLOps: [Data and Model Versioning](../MLOps/Data/), [Feature Management and Storing](../MLOps/PipelineAutomation/), [Automation of Pipelines and Processes](../MLOps/FeatureStore/),[ CI/CD for Machine Learning](../MLOps/CICDML/) and [Continuos Monitoring of Models](../MLOps/Monitoring/). As well as Common Tools used to address each of those points.
 
