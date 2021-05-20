@@ -9,6 +9,7 @@ As much as these tools solve several problems in software development, there are
 In a machine learning project, data scientists are continuously working on the development of new models. This process relies on trying different combinations of data, parameters, and algorithms. It's extremely positive to create an environment where it's possible to go back and forth on older or new experiments. 
 
 ![Versioning Diagram](project-versions.png "Versioning diagram")
+[^]: Image from DVC Documentation. https://dvc.org/doc/use-cases/versioning-data-and-model-files
 
 ## Reproducibility
 
