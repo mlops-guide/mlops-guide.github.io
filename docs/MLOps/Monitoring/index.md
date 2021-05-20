@@ -20,6 +20,11 @@ The main concepts that should be monitored are hte following:
 
 5. __Drift__: The statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes, producing what is known as [concept drift](https://link.springer.com/article/10.1023%2FA%3A1018046501280). 
 
+The following drawing[^1] shows that the health of a Machine Learning system relies on hidden characteristics that are not easy to monitor therefore using the analogy of an iceberg.
+![Monitoring Issues Iceberg](monitoring_iceberg.png "Monitoring Issues Iceberg")
+
+[^1]: Image from KDnuggets blog post "A Machine Learning Model Monitoring Checklist: 7 Things to Track". https://www.kdnuggets.com/2021/03/machine-learning-model-monitoring-checklist.html
+
 ## Popular Serving and Monitoring Tools
 Most tools used for serving Machine Learning models have monitoring tools. In many suites like IBM Watson, Microsoft Azure and Amazon Sagemaker there is components entirely dedicated to monitoring, like IBM Watson OpenScale. In the following table we can see some of the most popular monitoring tools for machine learning models.
 

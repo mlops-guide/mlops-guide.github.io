@@ -8,6 +8,8 @@ As much as these tools solve several problems in software development, there are
 
 In a machine learning project, data scientists are continuously working on the development of new models. This process relies on trying different combinations of data, parameters, and algorithms. It's extremely positive to create an environment where it's possible to go back and forth on older or new experiments. 
 
+![Versioning Diagram](project-versions.png "Versioning diagram")
+
 ## Reproducibility
 
 When discussing versioning, it's important to understand the term **reproducibility**. While versioning data, models, and code we are able to create a nice environment for data scientists to achieve the ultimate goal that is a good working model, there is a huge gap between this positive experiment to operationalize it. 

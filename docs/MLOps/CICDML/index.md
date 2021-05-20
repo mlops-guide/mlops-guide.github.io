@@ -2,6 +2,8 @@
 
 Just like in DevOps, CI/CD is a method to make changes more frequently by automating the development stages. In machine learning(ML) this stages are different than a software development, a model depends not only on the code but also the data and hyperparameters, as well as deploying a model to production is more complex too.
 
+![CI/CD Diagram](ci-cd.png "CI/CD Diagram")
+[^]: Image from Cloud HM blog. https://blog.cloudhm.co.th/ci-cd/
 ## Continuous Integration (CI)
 
 Continuous integration in ML means that every time a code or data is updated the ML pipeline reruns, this is done in a way that everything is versioned and reproducible, so it is possible to share the codebase across projects and teams. Every rerun may consist in training, testing or generating new reports, making easier to compare between other versions in production.

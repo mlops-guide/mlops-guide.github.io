@@ -41,6 +41,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.snippets
+  - footnotes
 
 
 nav:
