@@ -24,7 +24,7 @@ MLOps is a methodology of operation that aims to facilitate the process of bring
 
 ## MLOps Environment
 This video shows how an example of workflow with a complete MLOps project. This exact project can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions) and is an example end-to-end made for this guide.
-<script id="asciicast-410111" src="https://asciinema.org/a/410111.js" async></script>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OJOL80K31rY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Architecture
@@ -54,11 +54,11 @@ The main tools discussed in the guide are shown in the following table.
 
 MLOps Theory
 
-[📚 Learn More About MLOps Theory](/MLOps/Data/){ .md-button .md-button--primary }
+[📚 Learn More About MLOps Theory](./MLOps/Data/){ .md-button .md-button--primary }
 !!! tip
     It is recommended that you learn about the theory before implementing MLOps into your project
 
 Implementation Guide
 
-[📃 Follow the Tutorial to Start a Project](/Structure/project_structure/){ .md-button .md-button--primary }
+[📃 Follow the Tutorial to Start a Project](./Structure/project_structure/){ .md-button .md-button--primary }
 
