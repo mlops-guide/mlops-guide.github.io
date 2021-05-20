@@ -15,7 +15,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: #2c52db
+      primary: light blue
       accent: orange
       toggle:
         icon: octicons/moon-16
@@ -24,11 +24,10 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: #2c52db
+      primary: light blue
       accent: orange
       toggle:
         icon: octicons/sun-16
-        title: Switch to light mode
         name: Switch to light mode
   
   icon:

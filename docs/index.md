@@ -29,6 +29,21 @@ This video shows how an example of workflow with a complete MLOps project. This 
 The following diagram shows the complete MLOps flow used on the tutorial. SInce the guide is modular, a team can chose to swap tools at any point due to project preferences and use cases.
 <img src="./assets/DiagramMLOPs.png" alt="drawing" />
 
+### Project Tools
+The main tools discussed in the guide are shown in the following table.
+
+| Tools          | Function                   | Developer  |
+| -------------- |:--------------------------|:-----------|
+| [IBM Watson ML](https://www.ibm.com/cloud/machine-learning)  | Deploying model as API     | IBM        |
+| [IBM Watson Openscale](https://www.ibm.com/cloud/watson-openscale)  | Monitoring Model in production     | IBM |
+| [DVC](https://dvc.org/)            | Data and Model Versioning  | Iterative  |
+| [CML](https://dvc.org/doc/cml)            | Pipeline Automation        | Iterative    |
+| [Terraform](https://www.terraform.io/)      | Setups IBM infrastructure with script | HashiCorp|
+| [Github](https://github.com/)         | Code versioning            | Github |
+| [Github Actions](https://github.com/features/actions) | CI/CD Automation           | Github |
+| [Pytest](https://docs.pytest.org/)         | Python script testing      | Pytest-dev |
+| [Pre-commit](https://pre-commit.com/)     | Running tests on local commit | Pre-commit |
+| [Cookiecutter](https://github.com/cookiecutter/cookiecutter)   | Creating folder structure and files | Cookiecutter |
 
 ## Next
 

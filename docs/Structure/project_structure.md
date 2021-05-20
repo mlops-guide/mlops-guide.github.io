@@ -5,23 +5,24 @@ In the following sections we will go over the steps for the implementation of a 
 !!! Note
         We won't get into how to create predictive models or preprocessing data, since our main objective is to discuss MLOps and create a development cycle using those concepts.
 
+<img src="../../assets/DiagramMLOPs.png" alt="drawing" />
 
 ### Project Tools
 The main tools discussed in the guide are shown in the following table. As the guide is intended to be modular, a team can swap tools for others depending on the project necessities or preferences.
+
 
 | Tools          | Function                   | Developer  |
 | -------------- |:--------------------------|:-----------|
 | [IBM Watson ML](https://www.ibm.com/cloud/machine-learning)  | Deploying model as API     | IBM        |
 | [IBM Watson Openscale](https://www.ibm.com/cloud/watson-openscale)  | Monitoring Model in production     | IBM |
-| [DVC](https://dvc.org/)            | Data and Model Versioning  | DVC Organization  |
-| [CML](https://dvc.org/doc/cml)            | Pipeline Automation        | DVC Organization    |
+| [DVC](https://dvc.org/)            | Data and Model Versioning  | Iterative  |
+| [CML](https://dvc.org/doc/cml)            | Pipeline Automation        | Iterative    |
 | [Terraform](https://www.terraform.io/)      | Setups IBM infrastructure with script | HashiCorp|
 | [Github](https://github.com/)         | Code versioning            | Github |
 | [Github Actions](https://github.com/features/actions) | CI/CD Automation           | Github |
 | [Pytest](https://docs.pytest.org/)         | Python script testing      | Pytest-dev |
 | [Pre-commit](https://pre-commit.com/)     | Running tests on local commit | Pre-commit |
 | [Cookiecutter](https://github.com/cookiecutter/cookiecutter)   | Creating folder structure and files | Cookiecutter |
-
 
 ### Folder Structure
 
