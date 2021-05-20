@@ -22,13 +22,17 @@ Some examples of CD workflow :
 
 - Verify the requirements on the infrastructure environment before deploying it.
 - Test the model output based on a known input.
-- Load testing and model lantency.
+- Load testing and model latency.
   
 ## Popular CI/CD tools for Machine Learning
 
 There still aren't many alternatives for CI/CD in regards of Machine Learning. Regular CI/CD can be used if correctly implemented, such as running tests, deploy scripts, etc. focused on the MLOps environment. Although there are some tools preferred for most projects.
 
+<center>
+
 | Tools                             | License           | Developer  | Observations |
 | --------------------------------- |:-----------------:|:----------:|:------------ |
 | CML (Continuous Machine Learning) | Open-source       | Iterative  | Most popular tools for CI/CD specific for Machine Learning. By the same developers of DVC, it can be integrated into it. Can be easily used with Github Actions or Gitlab CI/CD.|
 | Jenkins                          | Open-source       | Jenkins CI | Jenkins is a popular tool for regular CI/CD that can be used for Machine Learning after some configuration. It is a popular choice among some MLOps projects that intend to run tests on local hardware or heavily configured cloud services.|
+
+</center>

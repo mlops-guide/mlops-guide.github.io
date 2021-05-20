@@ -11,6 +11,7 @@ In the following sections we will go over the steps for the implementation of a 
 The main tools discussed in the guide are shown in the following table. As the guide is intended to be modular, a team can swap tools for others depending on the project necessities or preferences.
 
 
+
 | Tools          | Function                   | Developer  |
 | -------------- |:--------------------------|:-----------|
 | [IBM Watson ML](https://www.ibm.com/cloud/machine-learning)  | Deploying model as API     | IBM        |
@@ -23,6 +24,8 @@ The main tools discussed in the guide are shown in the following table. As the g
 | [Pytest](https://docs.pytest.org/)         | Python script testing      | Pytest-dev |
 | [Pre-commit](https://pre-commit.com/)     | Running tests on local commit | Pre-commit |
 | [Cookiecutter](https://github.com/cookiecutter/cookiecutter)   | Creating folder structure and files | Cookiecutter |
+
+
 
 ### Folder Structure
 
@@ -40,7 +43,7 @@ The above image is the project's folder structure, we'll talk about each specifi
 This folder structure is going to be implemented in a blank project in [Introduction/Starting a New Project with Cookiecutter](/Structure/starting/)
 
 ### Requirements
-The requirements file is a list of all of a project’s dependencies and the specific version of each dependency, including the dependencies needed by the dependencies. It can also be used to create a virtual enviroment.
+The requirements file is a list of all of a project’s dependencies and the specific version of each dependency, including the dependencies needed by the dependencies. It can also be used to create a virtual environment.
 This is extremely important to avoid conflits between Python libraries and also ensure the experiments can be reproduced in different machines.
 
 ### Metadata File

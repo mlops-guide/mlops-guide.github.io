@@ -13,7 +13,7 @@ MLOps is a methodology of operation that aims to facilitate the process of bring
 * Feature Management and Storing
 * Automation of Pipelines and Processes
 * CI/CD for Machine Learning
-* Continuos Monitoring of Models
+* Continuous Monitoring of Models
 
 ## What is Contemplated on This Guide?
 
@@ -26,11 +26,13 @@ This video shows how an example of workflow with a complete MLOps project. This 
 
 
 ### Architecture
-The following diagram shows the complete MLOps flow used on the tutorial. SInce the guide is modular, a team can chose to swap tools at any point due to project preferences and use cases.
+The following diagram shows the complete MLOps flow used on the tutorial. Since the guide is modular, a team can chose to swap tools at any point due to project preferences and use cases.
 <img src="./assets/DiagramMLOPs.png" alt="drawing" />
 
 ### Project Tools
 The main tools discussed in the guide are shown in the following table.
+
+<center>
 
 | Tools          | Function                   | Developer  |
 | -------------- |:--------------------------|:-----------|
@@ -45,6 +47,7 @@ The main tools discussed in the guide are shown in the following table.
 | [Pre-commit](https://pre-commit.com/)     | Running tests on local commit | Pre-commit |
 | [Cookiecutter](https://github.com/cookiecutter/cookiecutter)   | Creating folder structure and files | Cookiecutter |
 
+</center>
 ## Next
 
 MLOps Theory

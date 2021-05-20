@@ -1,4 +1,4 @@
-# Setting Up the IBM Enviroment with Terraform
+# Setting Up the IBM Environment with Terraform
 
 ## Introduction
 

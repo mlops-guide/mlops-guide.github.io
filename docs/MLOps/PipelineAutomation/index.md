@@ -13,6 +13,7 @@ Executing this workflow with less manual intervention as possible should result 
 ## What can be automated?
 
 In the table below, it's possible to find machine learning stages and what tasks may be automated:
+<center>
 
 ML Stages | Tasks
 :---: | :---:
@@ -21,6 +22,8 @@ Model Development | Model training, evaluation, and testing
 Continuous Integration | Build and testing
 Continuous Delivery | Deployment new implementation of a model as a service
 Monitoring | Setting alerts based on pre-defined metrics
+
+</center>
 
 ## Levels of automation
 
@@ -36,6 +39,8 @@ Defining the level of automation has a crucial impact on the business behind the
 
 Currently there are many tools used to create and automate Machine Learning pipelines, experiments and any type of process. Below there is a list of some of there services.
 
+<center>
+
 | Tools                | License           | Developer  | Observations |
 | -------------------- |:-----------------:|:----------:|:------------ |
 | DVC                  | Open-source       | Iterative  | DVC can be used to make Data Pipelines, which can be automated and reproduced. Very useful if already using DVC for Data and Model versioning. Easily configured and run. Language and framework agnostic. |
@@ -43,3 +48,4 @@ Currently there are many tools used to create and automate Machine Learning pipe
 | Kubeflow             | Open-source       | Google, Kubeflow | Kubeflow can build automated pipelines and experiments. Intended to build a complete end-to-end solution for Machine learning, being able to also serve and monitor models. Uses Kubernetes and is based on Tensorflow Extended. Works with Tensoorflow and Pytorch. |
 | MLflow               | Open-source       | MLflow Project | Open-source platform for the machine learning lifecycle. Can be used with Python, Conda and Docker. Large community. |
 
+</center>
