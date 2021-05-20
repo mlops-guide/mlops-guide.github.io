@@ -139,7 +139,7 @@ After uploading to our branch, we can now create a Pull Request at the Github We
 Supposing our experiment was merged to the main branch, we can consider it ready for deployment. To do so, let's release a new version of the project using Github Website.
 
 <video width="100%"  controls>
-    <source src="../assets/workflow/video3.mp4" type="video/mp4">
+    <source src="../assets/workflow/release_watson.mp4" type="video/mp4">
 </video>
 
 After releasing the new version, CML and Github Actions will trigger a script responsible for deploying our model to Watson ML.
