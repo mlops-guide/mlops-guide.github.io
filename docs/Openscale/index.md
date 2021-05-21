@@ -209,7 +209,7 @@ On the main ```Insights Dashboard``` when click on our deployment, we can evalua
 
 After that, the metrics we defined for the monitors will be used to generate reports depicting our model's performance.
 
-<div style="text-align:center"><img src="../assets/Openscale/Capture14.PNG" alt="reports" width=60%/></div>
+<div style="text-align:center"><img src="../assets/Openscale/Capture15.PNG" alt="reports" width=60%/></div>
 
 
 ### Explaining Predictions

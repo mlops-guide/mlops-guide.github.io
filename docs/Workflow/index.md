@@ -145,7 +145,9 @@ Supposing our experiment was merged to the main branch, we can consider it ready
 After releasing the new version, CML and Github Actions will trigger a script responsible for deploying our model to Watson ML.
 
 
-{Imagem fazendo referencia ao novo deploy(não sei oq seria kkkk)}
+<video width="100%"  controls>
+    <source src="../assets/workflow/model_pred.mp4" type="video/mp4">
+</video>
 
 !!! info
     If forgot or want to know more how this deployment happens, go check out the [Continous Delivery with CML, Github Actions and Watson ML](../CICD/cml_deploy.md)
@@ -154,10 +156,11 @@ After releasing the new version, CML and Github Actions will trigger a script re
 
 Ending our workflow cicle, we can use IBM Openscale tool to monitor the model in production.
 
-{ gif? }
+<video width="100%"  controls>
+    <source src="../assets/workflow/openscale.mp4" type="video/mp4">
+</video>
 
-*** Escrever alguma coisa sobre a interface do Openscale, tipo as metricas observadas e etc ***
-*** Não precisa ser nem perto detalhado como ta no Implementation Guide ***
+There we can create monitors for Drift, Accuracy and Fairness. We can also explain the model's predictions, understanding which feature had more weight in the decision and also see what changes would need to be made for the outcome to change.
 
 !!! info
     If forgot or want to know more how to monitor your model in production, go check out the [Monitoring with IBM Openscale](../Openscale/index.md)
