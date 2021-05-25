@@ -29,5 +29,5 @@ A short description of each topic or subtopic.
         - [__Monitoring with IBM OpenScale:__](../Openscale) Setting up OpenScale environment, creating monitors, evaluating the model and explaining predictions.
 
     - __Project Workflow__
-        - [__Project Workflow:__](../Workflow): Demonstrating how to use the complete pipeline in a development cycle we created with commands and videos.
+        - [__Project Workflow:__](../Workflow) Demonstrating how to use the complete pipeline in a development cycle we created with commands and videos.
 
