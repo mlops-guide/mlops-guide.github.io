@@ -26,7 +26,7 @@ A short description of each topic or subtopic.
         - [__Continous Delivery with CML, Github Actions and Watson ML:__](../CICD/cml_deploy/) Using CML and GitHub Actions create automatic deployments for every new release.
 
     - __Monitoring__
-        - [__Monitoring with IBM Openscale:__](../Openscale) Setting up Openscale environment, creating monitors, evaluating the model and explaining predictions.
+        - [__Monitoring with IBM OpenScale:__](../Openscale) Setting up OpenScale environment, creating monitors, evaluating the model and explaining predictions.
 
     - __Project Workflow__
         - [__Project Workflow:__](../Workflow): Demonstrating how to use the complete pipeline in a development cycle we created with commands and videos.

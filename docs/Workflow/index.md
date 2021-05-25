@@ -154,7 +154,7 @@ After releasing the new version, CML and Github Actions will trigger a script re
 
 ## Monitoring
 
-Ending our workflow cicle, we can use IBM Openscale tool to monitor the model in production.
+Ending our workflow cicle, we can use IBM OpenScale tool to monitor the model in production.
 
 <video width="100%"  controls>
     <source src="../assets/workflow/openscale.mp4" type="video/mp4">
@@ -163,7 +163,7 @@ Ending our workflow cicle, we can use IBM Openscale tool to monitor the model in
 There we can create monitors for Drift, Accuracy and Fairness. We can also explain the model's predictions, understanding which feature had more weight in the decision and also see what changes would need to be made for the outcome to change.
 
 !!! info
-    If forgot or want to know more how to monitor your model in production, go check out the [Monitoring with IBM Openscale](../Openscale/index.md)
+    If forgot or want to know more how to monitor your model in production, go check out the [Monitoring with IBM OpenScale](../Openscale/index.md)
 
 
 

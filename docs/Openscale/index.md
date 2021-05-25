@@ -1,4 +1,4 @@
-# Monitoring with IBM Openscale
+# Monitoring with IBM OpenScale
 
 ### Setting Up the Environment
 1. Creating OpenScale service from the [Services Catalog](https://cloud.ibm.com/catalog/services/watson-openscale)
@@ -214,8 +214,11 @@ After that, the metrics we defined for the monitors will be used to generate rep
 
 ### Explaining Predictions
 Again, in the ```Transactions``` page, we can click on the ```Explain``` button, in the following page we can observe each features' relative weight indicating how strongly they influenced the model’s predicted outcome.
- <div style="text-align:center"><img src="../assets/Openscale/Capture11.PNG" alt="drawing" width=100%/></div>
+
+[![](../assets/Openscale/Capture11.PNG)](../assets/Openscale/Capture11.PNG)
 
 In the ```Inspect``` tab, there is a table displaying the values each  feature would have to have to alter the prediction result, here we can also change the values by hand to see what the outcome would be.
 
- <div style="text-align:center"><img src="../assets/Openscale/Capture12.PNG" alt="drawing" width=100%/></div>
+[![](../assets/Openscale/Capture12.PNG)](../assets/Openscale/Capture12.PNG)
+
+
