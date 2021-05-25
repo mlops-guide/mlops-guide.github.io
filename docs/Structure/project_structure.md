@@ -15,7 +15,7 @@ The main tools discussed in the guide are shown in the following table. As the g
 | Tools          | Function                   | Developer  |
 | -------------- |:--------------------------|:-----------|
 | [IBM Watson ML](https://www.ibm.com/cloud/machine-learning)  | Deploying model as API     | IBM        |
-| [IBM Watson Openscale](https://www.ibm.com/cloud/watson-openscale)  | Monitoring Model in production     | IBM |
+| [IBM Watson OpenScale](https://www.ibm.com/cloud/watson-openscale)  | Monitoring Model in production     | IBM |
 | [DVC](https://dvc.org/)            | Data and Model Versioning  | Iterative  |
 | [CML](https://dvc.org/doc/cml)            | Pipeline Automation        | Iterative    |
 | [Terraform](https://www.terraform.io/)      | Setups IBM infrastructure with script | HashiCorp|
