@@ -54,8 +54,7 @@ $ dvc init
 
 If you run ```git status```, you can check DVC's initial config files that were created.
 
-<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/dvc/dvc.cast"></asciinema-player>
-
+<asciinema-player rows=18 theme="monokai" cols=200 src="../ASCII_cinema/dvc/dvc.cast"></asciinema-player>
 ### Remote Storage
 
 Finally, we are going to setup our remote storage to keep our datasets and models. 
