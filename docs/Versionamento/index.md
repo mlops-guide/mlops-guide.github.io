@@ -54,7 +54,7 @@ $ dvc init
 
 If you run ```git status```, you can check DVC's initial config files that were created.
 
-ascii_cinema do git status
+<asciinema-player rows=18 theme="monokai" cols=200 src="/mlops-guide/ASCII_cinema/dvc/dvc.cast"></asciinema-player>
 
 ### Remote Storage
 
