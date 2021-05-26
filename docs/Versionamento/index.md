@@ -54,7 +54,6 @@ $ dvc init
 
 If you run ```git status```, you can check DVC's initial config files that were created.
 
-ascii_cinema do git status
 
 ### Remote Storage
 

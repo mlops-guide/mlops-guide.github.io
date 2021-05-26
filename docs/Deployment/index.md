@@ -82,7 +82,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
         model_details = client.repository.store_model(model=MODEL, meta_props=model_props)
         model_uid = client.repository.get_model_uid(model_details)
 
-5. Once complete, we'll give the deployment a name and then deploy the model using the store ID obtained in the previous step.
+5. Once completed, we'll give the deployment a name and then deploy the model using the store ID obtained in the previous step.
 
         deployment_props = {
             client.deployments.ConfigurationMetaNames.NAME: DEPLOY_NAME,
@@ -105,7 +105,7 @@ python3 model_deploy_pipeline.py ./model_file ../path/to/project/ ../credentials
 
 ### Accessing Model Predictions
 
-Having deployed the model. we can access it's predictions by sending requests to an end-point or by using the Python ```ibm_watson_machine_learning``` library, where we can send either features for a single prediction or payloads containing multiple lines of a dataframe, for example.
+Having deployed the model, we can access it's predictions by sending requests to an end-point or by using the Python ```ibm_watson_machine_learning``` library, where we can send either features for a single prediction or payloads containing multiple lines of a dataframe, for example.
 
 The payload body is made of the dataframe column names under the ```"fields"``` key and the features under ``` "values"``` .
 

@@ -21,7 +21,7 @@
 3. Adding to Dashboard
     3.1 On the ```Insights Dashboard```, click on the ```Add to dashboard``` button.
     <div style="text-align:center"><img src="../assets/Openscale/Capture5.PNG" alt="drawing" /></div>
-    3.2 Next select the proveider you just created, then select your model deployment and click on ```Configure``` and then ```Configure Monitors```.
+    3.2 Next select the provider you just created, then select your model deployment and click on ```Configure``` and then ```Configure Monitors```.
 
      <div style="text-align:center"><img src="../assets/Openscale/Capture6.PNG" alt="drawing" /></div>
 
@@ -186,7 +186,7 @@ In the ```Transactions``` page, we can see informations about transactions, incl
 
         print(wos_client.data_sets.get_records_count(data_set_id=feedback_dataset_id))
 
-9. After that We can access these datasets as Pandas dataframes.
+9. After that we can access these datasets as Pandas dataframes.
 
         records2 = wos_client.data_sets.get_list_of_records(data_set_id=payload_data_set_id,output_type=ResponseTypes.PANDAS)
 
