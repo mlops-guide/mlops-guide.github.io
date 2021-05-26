@@ -3,7 +3,7 @@
 So now that your repository is initialized and connected with your remote storage, we can start to version your data.
 
 !!! warning
-    This section will use the help of the [template repository](https://github.com/MLOPsStudyGroup/dvc-gitactions) to show how to version data with DVC. Feel free to reproduce it with your own data files for your project.
+    This section will use the help of the [template repository](https://github.com/mlops-guide/dvc-gitactions) to show how to version data with DVC. Feel free to reproduce it with your own data files for your project.
 
 ## dvc add
 

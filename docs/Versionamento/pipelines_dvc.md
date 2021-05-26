@@ -8,10 +8,10 @@ Let's assume that we are using the last section dataset as a data source for tra
 - Train the model
 - Evaluate the model
 
-Here you should have in hands our scripts: [**preprocess.py**, **train.py**, **evaluate.py** and **model.py**](https://github.com/MLOPsStudyGroup/dvc-gitactions/tree/master/src).
+Here you should have in hands our scripts: [**preprocess.py**, **train.py**, **evaluate.py** and **model.py**](https://github.com/mlops-guide/dvc-gitactions/tree/master/src).
 
 !!! warning
-    Just as in the last section, we will use the help of the [template repository](https://github.com/MLOPsStudyGroup/dvc-gitactions) to explain and build DVC's pipelines. Feel free to use your scripts and create specific pipelines for your project needs.
+    Just as in the last section, we will use the help of the [template repository](https://github.com/mlops-guide/dvc-gitactions) to explain and build DVC's pipelines. Feel free to use your scripts and create specific pipelines for your project needs.
 
 ## Creating pipelines
 

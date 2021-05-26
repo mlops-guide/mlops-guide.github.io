@@ -18,7 +18,7 @@ After that, Actions will trigger and the model on Watson ML, next we will explai
  <div style="text-align:center"><img src="../../assets/cml_release/Capture4.PNG" alt="drawing" /></div>
 
 ## Git Actions
-The workflow downloads the data from dvc the uses credentials, to understand all the previous steps, refer to the [last](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#adding-train-and-evaluate-workflow) section where we explained step by step [what is CML](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#what-is-cml) and [how to implement workflows](https://mlopsstudygroup.github.io/mlops-guide/CICD/cml_testing/#testing-with-github-actions). The complete workflow can be found [here](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/.github/workflows/deploy_on_release.yaml).
+The workflow downloads the data from dvc the uses credentials, to understand all the previous steps, refer to the [last](https://mlops-guide.github.io/mlops-guide/CICD/cml_testing/#adding-train-and-evaluate-workflow) section where we explained step by step [what is CML](https://mlops-guide.github.io/mlops-guide/CICD/cml_testing/#what-is-cml) and [how to implement workflows](https://mlops-guide.github.io/mlops-guide/CICD/cml_testing/#testing-with-github-actions). The complete workflow can be found [here](https://github.com/mlops-guide/dvc-gitactions/blob/master/.github/workflows/deploy_on_release.yaml).
 
 First we set the workflow to trigger every time a new release is created:
 ```yaml 
@@ -77,4 +77,4 @@ This is the following bash script:
         python3 ./src/scripts/Pipelines/model_deploy_pipeline.py ./models/model.joblib ./ ./credentials.yaml
     fi
 
-First we check if there is a model UID in the ```metadata.yaml```, if positive, we consider the model has already been deployed, and the we run scripts to update the [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) and the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py), to find more details on how we use scripts to deploy the model on Watson Machine Learning you can go to [this](https://mlopsstudygroup.github.io/mlops-guide/Deployment/) page from our guide.
+First we check if there is a model UID in the ```metadata.yaml```, if positive, we consider the model has already been deployed, and the we run scripts to update the [model](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) and the [deployment](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py), to find more details on how we use scripts to deploy the model on Watson Machine Learning you can go to [this](https://mlops-guide.github.io/mlops-guide/Deployment/) page from our guide.

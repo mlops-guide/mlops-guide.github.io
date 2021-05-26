@@ -95,4 +95,4 @@ def update_deployment_space(client, new_name, space_id):
 
 !!! note
 
-    To see the complete script [click here](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/.infra/datapak_manage.py)
+    To see the complete script [click here](https://github.com/mlops-guide/dvc-gitactions/blob/master/.infra/datapak_manage.py)

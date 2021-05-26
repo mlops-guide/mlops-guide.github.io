@@ -17,7 +17,7 @@ Let's start by cloning the project repository you will be working on. We need to
 
 <asciinema-player rows=18 theme="monokai" cols=200 src="../ASCII_cinema/workflow/part1.cast"></asciinema-player>
 ```
-git clone https://github.com/MLOPsStudyGroup/dvc-gitactions.git
+git clone https://github.com/mlops-guide/dvc-gitactions.git
 cd dvc-gitactions
 pip3 install -r requirements.txt
 pre-commit install

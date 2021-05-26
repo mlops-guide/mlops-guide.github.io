@@ -14,7 +14,7 @@ To deploy our ML model, we will use IBM's Watson Machine Learning, which will al
 
 
 !!! Note
-    The complete script can be found on our [example reposistory](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py)
+    The complete script can be found on our [example reposistory](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py)
 
 The deployment scrip takes  the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credentials file.
 
@@ -174,7 +174,7 @@ Updating the asset contaning the model and/or updating the deployment.
 
 
 !!!Note
-    The complete scripts for the [deployment](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our template repository.
+    The complete scripts for the [deployment](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py) and [model](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) can be found on our template repository.
 
 1. Firstly we need to update the model asset in WML by passing the new model as well as a name.
 
@@ -214,7 +214,7 @@ Updating the asset contaning the model and/or updating the deployment.
 We have previously created revisions of a model, to rollback the model version, we'll list all the revisions made.
 
 !!!Note 
-    [Complete script](https://github.com/MLOPsStudyGroup/dvc-gitactions/blob/0.0.11/src/scripts/Pipelines/model_redeploy_pipeline.py)
+    [Complete script](https://github.com/mlops-guide/dvc-gitactions/blob/0.0.11/src/scripts/Pipelines/model_redeploy_pipeline.py)
 
 1. Listing the revisions.
 

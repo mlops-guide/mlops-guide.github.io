@@ -2,7 +2,7 @@
 
 
 ## What is Cookiecutter?
-Cookiecutter is a CLI tool that can be used to create projects based on templates. It can create folder structures and static files based on user input info on predefined questions. In this guide cookiecutter will create the project structure based on the [MLOps Cookiecutter Template](https://github.com/MLOPsStudyGroup/mlops-template)
+Cookiecutter is a CLI tool that can be used to create projects based on templates. It can create folder structures and static files based on user input info on predefined questions. In this guide cookiecutter will create the project structure based on the [MLOps Cookiecutter Template](https://github.com/mlops-guide/mlops-template)
 
 ## Installing Cookiecutter
 Cookiecutter is officially supported on Linux, MacOS and Windows. More info on installing it can be accessed on their [documentation](https://cookiecutter.readthedocs.io/en/1.7.2/installation.html#install-cookiecutter)
@@ -33,12 +33,12 @@ sudo apt-get install cookiecutter
 Now that cookiecutter is configured we can use the template to create a structured new project
 
 ```bash
-cookiecutter https://github.com/MLOPsStudyGroup/mlops-template.git
+cookiecutter https://github.com/mlops-guide/mlops-template.git
 ```
 
 This should result in the following questions, which will be used to fill the project with info
 ```bash
-author [MLOpsStudyGroup]:
+author [mlops-guide]:
 project_name [Australia Weather Prediction]:
 project_slug [australia_weather_prediction]:
 project_version [v0.1]:
