@@ -18,7 +18,7 @@ Here you should have in hands our scripts: [**preprocess.py**, **train.py**, **e
 DVC builds a pipeline based on three components: Inputs, Outputs, and Command. So for the preprocessing stage, this would look like this:
 
  - Inputs: weatherAUS.csv.csv and preprocess.py script
- - Outputs: weatherAUS_processed.csv.csv
+ - Outputs: weatherAUS_processed.csv
  - Command: python preprocess.py weatherAUS.csv
 
 So to create this stage of preprocessing, we use ```dvc run```:
@@ -26,7 +26,7 @@ So to create this stage of preprocessing, we use ```dvc run```:
 ```bash
 dvc run -n preprocess \
   -d ./src/preprocess_data.py -d data/weatherAUS.csv \
-  -o ./data/weatherAUS_processed.csv -o ./data/features.csv \
+  -o ./data/weatherAUS_processed.csv \
   python3 ./src/preprocess_data.py ./data/weatherAUS.csv
 ```
 

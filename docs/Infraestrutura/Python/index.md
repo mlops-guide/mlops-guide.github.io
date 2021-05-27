@@ -1,6 +1,6 @@
 # Managing the deployment space
 
-The current IBM's terraform module is in development and some features are still missing. So we will use a Python script to manage the IBM Watson's deployment space, including create, delete and get the *space_id*, the later is very importance as it is used in other scripts.
+The current IBM's terraform module is in development and some features are still missing. So we will use a Python script to manage the IBM Watson's deployment space, including create, delete and get the *space_id*, which will be very important as it is used in other scripts.
 
 ### Authentication
 

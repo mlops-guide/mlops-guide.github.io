@@ -15,7 +15,7 @@ Terraform is an open-source infrastructure as a code software tool created by Ha
 
 We need to [install the terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and the IBM's module.
 
-## IBM module
+## IBM Module
 
   To install IBM's module paste the following code into your terraform script then run ```terraform init```.
   
@@ -34,7 +34,7 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
   }
 ```
 
-## Terraform script
+## Terraform Script
 
 ```
 #### MODULE
@@ -85,14 +85,14 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
 This script will create:
 
 - Work group
-- Watson machine learning resource
+- Watson Machine Learning resource
 - IBM COS instance
 
 ## Authentication
 
-  Before you continue, you will need to create an **API Key** and assign it to an environment variable called **IBMCLOUD_API_KEY**
+  Before you continue, you will need to create an **API Key** and assign it to an environment variable called **IBMCLOUD_API_KEY**.
 
-## Terraform plan and apply
+## Terraform Plan and Apply
 If we run the command ```terraform plan``` the following output shows all the changes that will be made, in this case, create all the resources.
 ```
 Terraform will perform the following actions:

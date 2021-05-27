@@ -2,7 +2,7 @@
 
 ## Why Testing Your Project?
 
-In the software development industry it has become a good practice to test your code and try achieving the most possible coverage. This practice helps with making a project that is maintainable, reliable and avoids problems like shipping new versions that break old features. It is important to follow the same practice on the MLOps spectrum by testing the code, the model and even the data. Making tests is somwhat very particular to the project, so this section will show a simple implementation of a testing pipeline using Pytest and Pre-commit, which should later be filled with tests that comprehend the specific project needs.
+In the software development industry it has become a good practice to test your code and try achieving the most possible coverage. This practice helps with making a project that is maintainable, reliable and avoids problems like shipping new versions that break old features. It is important to follow the same practice on the MLOps spectrum by testing the code, the model and even the data. Making tests is somewhat very particular to the project, so this section will show a simple implementation of a testing pipeline using Pytest and Pre-commit, which should later be filled with tests that comprehend the specific project needs.
 
 ### Types of testing
 

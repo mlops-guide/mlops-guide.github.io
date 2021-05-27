@@ -12,7 +12,6 @@ This is all possible because DVC replaces large files (such as datasets and ML m
 <center> <h4>DVC workflow from <a href='https://dvc.org'>https://dvc.org</a></h4> </center>
 
 
-
 Since DVC works on top of Git, its syntax and workflow are also similar so that you're able to treat data and model versioning just as you do with code. Although DVC can work stand-alone, it's highly recommended to work alongside Git.
 
 DVC can also manage the project's pipelines to make experiments reproducible for all members. These pipelines are lightweight and are created using dependency graphs. 
@@ -55,6 +54,7 @@ $ dvc init
 If you run ```git status```, you can check DVC's initial config files that were created.
 
 <asciinema-player rows=18 theme="monokai" cols=200 src="../ASCII_cinema/dvc/dvc.cast"></asciinema-player>
+
 ### Remote Storage
 
 Finally, we are going to setup our remote storage to keep our datasets and models. 

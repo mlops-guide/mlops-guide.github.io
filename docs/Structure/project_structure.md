@@ -82,5 +82,6 @@ The Jupyter Notebook is an open-source web application that allows you to create
                 ...
                 return results
         
-In our project we choose to use notebooks as a form of experimentation of models or processes and the script as a more 'definitive' form for the reasons cited above.
+In our project we choose to use scripts instead of Jupyter Notebooks for the reasons cited above, however notebooks could still be used as a form of experimentation of models or processes and the script as a more 'definitive' form.
+
 

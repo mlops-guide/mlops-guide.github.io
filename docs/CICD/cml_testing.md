@@ -13,7 +13,7 @@ Since we are using Github as our Git repository, Github Actions will be used to 
 
 First, we will make sure our tests created at the [Testing with Pytest and Black](/CICD/tests/) section are being executed every time that there is a new *push* to the repository on Github. This important in order to achieve redundancy in testing the project, and avoid making sure the code runs without errors on any environment and not just the developer's computer.
 
-To do this is very simple. If you used cookiecutter you should alreayd have a file named **test_on_push.yaml** at ```.github/workflows/``` folder. The content of the file should be:
+To do this is very simple. If you used cookiecutter you should already have a file named **test_on_push.yaml** at ```.github/workflows/``` folder. The content of the file should be:
 
 ```yaml
 name: Python Package and Test
