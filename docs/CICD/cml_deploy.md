@@ -77,4 +77,6 @@ This is the following bash script:
         python3 ./src/scripts/Pipelines/model_deploy_pipeline.py ./models/model.joblib ./ ./credentials.yaml
     fi
 
-First we check if there is a model UID in the ```metadata.yaml```, if positive, we consider the model has already been deployed, and the we run scripts to update the [model](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) and the [deployment](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py), to find more details on how we use scripts to deploy the model on Watson Machine Learning you can go to [this](https://mlops-guide.github.io/mlops-guide/Deployment/) page from our guide.
+First we check if there is a model UID in the ```metadata.yaml```. If positive, we consider the model has already been deployed, and the we run scripts to update the [model](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py) and the [deployment](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py). 
+
+To find more details on how we use scripts to deploy the model on Watson Machine Learning you can go to [this](https://mlops-guide.github.io/mlops-guide/Deployment/) page from our guide.

@@ -47,7 +47,7 @@ dvc run -n train \
 !!! Warning
     The number **200** at ```dvc run``` above is related to our script function. If your are using your own script just ignore it.
 
-At this point, you might have noticed that two new files were created: **dvc.yaml** and ***dvc.lock***.  The first one will be responsible for saving what was described in each ```dvc run``` command. So if you wanna created or change a specific stage, it's possible to just edit ***dvc.yaml*** . Our current file would look like this:
+At this point, you might have noticed that two new files were created: **dvc.yaml** and ***dvc.lock***.  The first one will be responsible for saving what was described in each ```dvc run``` command. So if you wanna create or change a specific stage, it's possible to just edit ***dvc.yaml*** . Our current file would look like this:
 
 ```yaml
 stages:

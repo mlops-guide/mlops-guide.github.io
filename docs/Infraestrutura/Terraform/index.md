@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Infrastructure as a code(IaC) is a process of managing and provisioning mechanisms for authenticating, planning and implementing servers and data centers in the cloud and private network without the need to manually configure everything through the provider's UI. IaC is a good practice that has been gaining attention since the DevOps culture started to grow and it is one of many processes that MLOps shares with it. For example, it makes easier to fast reploy the infrastructure in a disaster scenario or an alternative plan to quickly change providers.
+Infrastructure as a code(IaC) is a process of managing and provisioning mechanisms for authenticating, planning and implementing servers and data centers in the cloud and private network without the need to manually configure everything through the provider's UI. IaC is a good practice that has been gaining attention since the DevOps culture started to grow and it is one of many processes that MLOps shares with it. For example, it makes easier to fast redeploy the infrastructure in a disaster scenario or an alternative plan to quickly change providers.
 
 For this example, we will use [Terraform](https://www.terraform.io/) to deploy the needed IBM resources and a Python script to manage the deployment space inside the IBM Watson environment.
 
