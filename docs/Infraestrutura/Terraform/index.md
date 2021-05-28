@@ -15,29 +15,12 @@ Terraform is an open-source infrastructure as a code software tool created by Ha
 
 We need to [install the terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) and the IBM's module.
 
-## IBM Module
-
-  To install IBM's module paste the following code into your terraform script then run ```terraform init```.
-  
-```
-  terraform {
-    required_providers {
-      ibm = {
-        source = "IBM-Cloud/ibm"
-        version = "1.24.0"
-      }
-    }
-  }
-
-  provider "ibm" {
-  #  Configuration options
-  }
-```
 
 ## Terraform Script
 
 ```
-#### MODULE
+  # IBM's module.
+  # It will download the module when run "terraform init"
 
   terraform {
     required_providers {
@@ -51,13 +34,17 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
 
   provider "ibm" {}
 
-  #### RESOURCE GROUP
+  
+  # This will create a resource group
+  # It separates the resources used inside IBM's cloud
 
   data "ibm_resource_group" "group" {
     name = "GROUP_NAME"
   }
 
-  #### Watson machine learning resource
+ 
+ # This part will deploy a Watson machine learning resource
+  
   resource "ibm_resource_instance" "wml" {
     name              = "WML_NAME"
     service           = "pm-20"
@@ -68,8 +55,9 @@ We need to [install the terraform](https://learn.hashicorp.com/tutorials/terrafo
 
   }
 
-  #### IBM Cloud Object Storage
-
+ 
+ # This deploys a IBM Cloud Object Storage resource
+  
   resource "ibm_resource_instance" "cos" {
     name              = "COS_NAME"
     service           = "cloud-object-storage"
@@ -87,6 +75,8 @@ This script will create:
 - Work group
 - Watson Machine Learning resource
 - IBM COS instance
+
+To install IBM's module run ```terraform init```.
 
 ## Authentication
 
