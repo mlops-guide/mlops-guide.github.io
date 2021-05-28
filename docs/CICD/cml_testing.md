@@ -21,30 +21,30 @@ name: Python Package and Test
 	on: [push]
 	 
 	jobs:
-	 build:
-	 
-	 runs-on: ubuntu-latest
-	 strategy:
-	 matrix:
-	 	python-version: [3.6]
-	 
-	 steps:
-	 - uses: actions/checkout@v2
-	 - name: Set up Python ${{ matrix.python-version }}
-	 uses: actions/setup-python@v2
-	 with:
-	 python-version: ${{ matrix.python-version }}
-	 - name: Install dependencies
-	 run: |
-	 python -m pip install --upgrade pip
-	 pip install pytest black
-	 if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-	 - name: Test with pytest
-	 run: |
-	 pytest
-	 - name: Python Black
-	 run: |
-	 black . --check
+		build:
+		
+		runs-on: ubuntu-latest
+		strategy:
+		matrix:
+			python-version: [3.6]
+		
+		steps:
+		- uses: actions/checkout@v2
+		- name: Set up Python ${{ matrix.python-version }}
+		uses: actions/setup-python@v2
+		with:
+		python-version: ${{ matrix.python-version }}
+		- name: Install dependencies
+		run: |
+		python -m pip install --upgrade pip
+		pip install pytest black
+		if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+		- name: Test with pytest
+		run: |
+		pytest
+		- name: Python Black
+		run: |
+		black . --check
 ```
 
 Now, we should take a look into those commands.

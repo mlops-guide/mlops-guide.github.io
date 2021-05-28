@@ -22,7 +22,7 @@ To guarantee that the experimentation of the data science team will become a mod
  - **Data:** The same data of the experiment must be available.
  - **Settings:** Repeat and reproduce experiments with the same settings from the original.
  - **Implementation:** Especially with complex models, different implementations can have different results. This is important to keep in mind when debugging.
- - **Environment:**: It's crucial to have the same runtime configurations among all data scientists.
+ - **Environment:** It's crucial to have the same runtime configurations among all data scientists.
 
 ## Popular Versioning Tools
 
