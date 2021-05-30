@@ -211,3 +211,6 @@ cml-publish ./results/precision_recall_curve.png --md >> report.md
 ```yaml
 cml-send-comment report.md
 ```
+
+The Report should look like the following:
+![report](../assets/CICD/Capture.PNG)(.zoom)
