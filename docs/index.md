@@ -1,8 +1,5 @@
 # MLOps Guide
 
-!!! warning
-    **This guide is not completed yet**. Be careful before using it as some parts might be missing or still unfinished.
-
 <img src="./assets/banner.jpg" alt="MlOps Banner" />
 
 This site is intended to be a MLOps Guide to help projects and companies to build more reliable MLOps environment. This guide should contemplate the theory behind MLOps and an implementation that should fit for most use cases.
