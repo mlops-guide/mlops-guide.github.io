@@ -25,7 +25,7 @@ This video shows how an example of workflow with a complete MLOps project. This 
 
 
 ### Architecture
-The following diagram shows the complete MLOps flow used on the tutorial. Since the guide is modular, a team can chose to swap tools at any point due to project preferences and use cases.
+The following diagram shows the complete MLOps flow used on the tutorial. Since the guide is modular, a team can choose to swap tools at any point due to project preferences and use cases.
 
 ![Diagram](./assets/DiagramMLOPs.png){.zoom}
 

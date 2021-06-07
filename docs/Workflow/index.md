@@ -154,7 +154,7 @@ After releasing the new version, CML and Github Actions will trigger a script re
 
 ## Monitoring
 
-Ending our workflow cicle, we can use IBM OpenScale tool to monitor the model in production.
+Ending our workflow cycle, we can use IBM OpenScale tool to monitor the model in production.
 
 <video width="100%"  controls>
     <source src="../assets/workflow/openscale.mp4" type="video/mp4">

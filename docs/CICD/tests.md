@@ -85,11 +85,11 @@ pytest-check.............................................................Passed
 
 ## Adding Software Testing
 
-Now we are going to write some more tests for the project. One of the most necessary parts of testing in this project is on the Preprocess Pipeline, which comprehends the highest number of functions. So here we will be implementing a tests the covers those functions, their ability to read and write files, and that a reduced dataset can be preprocessed with no problems.
+Now we are going to write some more tests for the project. One of the most necessary parts of testing in this project is on the Preprocess Pipeline, which comprehends the highest number of functions. So here we will be implementing a test the covers those functions, their ability to read and write files, and that a reduced dataset can be preprocessed with no problems.
 
 Create a folder called ```preprocess/``` inside ```tests/```, and inside this folder a file called ```test_preprocess.py``` and another folder called ```test_data/```, in which we are going to add a simple dataset file ```testWeatherAUS.csv``` with the first 2 lines of the real dataset.
 
-Now with this created, edit ```tests/preprocess/test_preprocess.py``` with some imports and a an addition to path to be able to access the test dataset. 
+Now with this created, edit ```tests/preprocess/test_preprocess.py``` with some imports and an addition to path to be able to access the test dataset. 
 
 ```Python
 import io
@@ -135,7 +135,7 @@ def test_null_percent():
     assert preprocess_data.null_percent_by_line(data).to_list() == [0.5, 0]
 ```
 
-Now that we made some example of unit testing, we should add tests that comprehend the full pipeline, in this case checking if it runs smoothly or returns an error. Pretty general test that can be used to avoid some basic mistakes. This test creates a ```testWeatherAUS_processed.csv``` file.
+Now that we made some examples of unit testing, we should add tests that comprehend the full pipeline, in this case checking if it runs smoothly or returns an error. Pretty general test that can be used to avoid some basic mistakes. This test creates a ```testWeatherAUS_processed.csv``` file.
 
  This test is going to be important for the next tests, so we will add a mark of dependency, which is a Pytest feature that can be used to tell Python that a test function should be run before another. In this case, any function that marks this function as a dependency will run after this one finishes.
 
@@ -164,7 +164,7 @@ def test_processed_file_format():
         raise RuntimeError("Unable to open " + PROCESSED_DATA_PATH + " as dataframe")
 ```
 
-Now that we have implemented our example of tests we need to delete the file created, which is ```test_data/testWeatherAUS_processed.csv```. A ligature is a feature of Pytest that makes it possible to run code before or after the tests, which are run in the ```yield``` call on the code.
+Now that we have implemented our example of tests, we need to delete the file created, which is ```test_data/testWeatherAUS_processed.csv```. A ligature is a feature of Pytest that makes it possible to run code before or after the tests, which are run in the ```yield``` call on the code.
 
 ```Python
 @pytest.fixture(scope="session", autouse=True)
@@ -183,7 +183,7 @@ Now, when you run a ```pytest```, or ```git commit`` which triggers pytest, all 
 
 It is important to note that it is very important to tests the functions that are being used in the scripts of model handling and data handling, such as the function ```get_variables()``` in the ```model.py```. Se we are going to follow the same structure and create a file ```tests/model/test_model.py```.
 
-In this case we would like to test a large variety of different inputs, so we will be using ```pytest.mark.parametrize()``` which enables us to chose a large amount of inputs and expected results.
+In this case we would like to test a large variety of different inputs, so we will be using ```pytest.mark.parametrize()``` which enables us to choose a large amount of inputs and expected results.
 
 
 

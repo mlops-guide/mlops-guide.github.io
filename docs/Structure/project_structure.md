@@ -44,7 +44,7 @@ This folder structure is going to be implemented in a blank project in [Introduc
 
 ### Requirements
 The requirements file is a list of all of a project’s dependencies and the specific version of each dependency, including the dependencies needed by the dependencies. It can also be used to create a virtual environment.
-This is extremely important to avoid conflits between Python libraries and also ensure the experiments can be reproduced in different machines.
+This is extremely important to avoid conflicts between Python libraries and also ensure the experiments can be reproduced in different machines.
 
 ### Metadata File
 
