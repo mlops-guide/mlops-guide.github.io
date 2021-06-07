@@ -10,7 +10,7 @@ Continuous integration in ML means that every time a code or data is updated the
 
 Note that, it is possible and recommended to run code tests too, for example, ensuring the code is in certain format, dataset values, such as NaN or wrong data types or functions outputs.
 
-Some examples of a CI workflow :
+Some examples of a CI workflow:
 
 - running and versioning the training and evaluation for every commit to the repository.
 - running and comparing experiment runs for each Pull Request to a certain branch.
@@ -18,9 +18,9 @@ Some examples of a CI workflow :
 
 ## Continuous Deployment (CD)
 
-Continuous deployment is a method to automate the deployment of the new release to production, or any environment such as staging. This practice makes it easier to receive users feedback, as the changes are faster and constant, as well as new data for retraining or new models.
+Continuous deployment is a method to automate the deployment of the new release to production, or any environment such as staging. This practice makes it easier to receive users' feedback, as the changes are faster and constant, as well as new data for retraining or new models.
 
-Some examples of CD workflow :
+Some examples of CD workflow:
 
 - Verify the requirements on the infrastructure environment before deploying it.
 - Test the model output based on a known input.

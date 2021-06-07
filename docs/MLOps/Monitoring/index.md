@@ -5,8 +5,6 @@ It is also necessary to emphasize the importance of monitoring models in product
 
 Therefore, we need tools that can test and monitor models to ensure their best performance, in addition to mitigating regulatory, reputation and operational risks. 
 
-
-
 ## What to Monitor?
 The main concepts that should be monitored are the following:
 
@@ -31,6 +29,6 @@ Most tools used for serving Machine Learning models have monitoring tools. In ma
 | Tools                | License           | Developer  | Observations |
 | -------------------- |:-----------------:|:----------:|:------------ |
 | IBM Watson OpenScale | Proprietary        | IBM        | Monitors models deployed to IBM Watson Machine Learning. Monitors fairness, explainability and drift. Has tools for managing and correcting problems or inaccuracies in production.
-| OpenShift            | Open-source        | Red Hat    | Kubernetes based system able to deploy various types of applications. It is platform agnostic and can be used for any type of application. Can be useful when a model is heavily integrated into a microsservice environment.|
-| Seldon Core          | Open-source        | SeldonIO   | Deploys models into microsservices with Advanced Metrics, Request Logging, Explainers, Outlier Detectors, A/B Tests, Canaries and more. Platform agnostic and works with many Machine Learning frameworks |
+| OpenShift            | Open-source        | Red Hat    | Kubernetes based system able to deploy various types of applications. It is platform agnostic and can be used for any type of application. Can be useful when a model is heavily integrated into a microservice  environment.|
+| Seldon Core          | Open-source        | SeldonIO   | Deploys models into microservices with Advanced Metrics, Request Logging, Explainers, Outlier Detectors, A/B Tests, Canaries and more. Platform agnostic and works with many Machine Learning frameworks |
 | Tensorflow Extended (TFX) | Open-source        | Tensorflow | Deploy Tensorflow Models as API and has monitoring capabilities. |

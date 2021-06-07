@@ -38,7 +38,7 @@
 
     3.7 Here we can select Automatic Logging.
 
-    3.8 Finally we can select ```prediction``` and ```probability``` for the model output.details
+    3.8 Finally, we can select ```prediction``` and ```probability``` for the model output.
 
 4. Configuring Monitors
     We can create monitors for ```Fairness```,  ```Quality```. ```Drift``` and ```Explainability```.

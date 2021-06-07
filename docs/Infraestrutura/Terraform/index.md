@@ -9,7 +9,7 @@ For this example, we will use [Terraform](https://www.terraform.io/) to deploy t
 
 ## What is Terraform?
 
-Terraform is an open-source infrastructure as a code software tool created by HashiCorp. It enables users to define and provision an infrastruture in a high-level configuration language. It saves the current state and any changes made on the script will only make the changes needed, eg. change an instance name won't reset the instance itself or make any changes on other resources.
+Terraform is an open-source infrastructure as a code software tool created by HashiCorp. It enables users to define and provision an infrastructure in a high-level configuration language. It saves the current state and any changes made on the script will only make the changes needed, e.g.,  change an instance name won't reset the instance itself or make any changes on other resources.
 
 ## Requirements
 
@@ -139,13 +139,13 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 
 ```
 
-If everything is correct then run **```terraform apply```** to create the infrastructure.
+If everything is correct, then run **```terraform apply```** to create the infrastructure.
 
 ## Outputs
 
-After everything is set, terraform create a state file with the resources metadata. This file can be quite overhelming to work with and we will need some of this metadata. That's the use for an output file, when we run ```terraform apply```, it detects this file and create a section on the state file with the information needed and it is easier to work with.
+After everything is set, terraform create a state file with the resources metadata. This file can be quite overwhelming  to work with and we will need some of this metadata. That's the use for an output file, when we run ```terraform apply```, it detects this file and create a section on the state file with the information needed and it is easier to work with.
 
-The following script is an output file with the metadatas that will be used on the next steps.
+The following script is an output file with the metadata that will be used on the next steps.
 
 ```
 output "cos_crn" {
@@ -162,5 +162,5 @@ output "wml_crn" {
 
 ```
 
-It is very straightforward and easy to read and understand. Note that, it is possible to create this file after everything is deployed and run a ```terraform apply``` again without worring about the instances.
+It is very straightforward and easy to read and understand. Note that, it is possible to create this file after everything is deployed and run a ```terraform apply``` again without worrying  about the instances.
 

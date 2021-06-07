@@ -13,8 +13,8 @@ theme:
     - navigation.extend
   palette:
     # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
       primary: light blue
       accent: orange
       toggle:
@@ -22,8 +22,8 @@ theme:
         name: Switch to dark mode
 
     # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
       primary: light blue
       accent: orange
       toggle:

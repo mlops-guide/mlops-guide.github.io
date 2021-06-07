@@ -1,6 +1,6 @@
 # IAM Access 
 
-To manage users access to the infrastructure resources is a good practice both as a server health safety and a cybersecurity matter, as it makes harder to gain admin access to those resources. In this section, it will be shown how to create your own **API Key** to use in many steps on this tutorial.
+To manage users' access to the infrastructure resources is a good practice both as a server health safety and a cybersecurity matter, as it makes harder to gain admin access to those resources. In this section, it will be shown how to create your own **API Key** to use in many steps on this tutorial.
 
 ## Steps
 

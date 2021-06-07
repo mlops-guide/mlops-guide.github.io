@@ -10,11 +10,11 @@ After creating and training a ML model we can upload it as an *Asset* in the Dep
 
 ### Deployment using Python API  
 
-To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a web service. Since we want to automatise pipelines, we will be creating scripts using the [WML Python API](http://ibm-wml-api-pyclient.mybluemix.net/).
+To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a web service. Since we want to automatize pipelines, we will be creating scripts using the [WML Python API](http://ibm-wml-api-pyclient.mybluemix.net/).
 
 
 !!! Note
-    The complete script can be found on our [example reposistory](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py)
+    The complete script can be found on our [example repository](https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py)
 
 The deployment scrip takes  the path to the trained model, the path to the root of the project containing the ```metadata.yaml``` file, and the credentials file.
 
@@ -170,7 +170,7 @@ The model response will contain the scoring result containing prediction and cor
     This consumes CUH. Watson Machine Learning CUH are used for running experiments, so there is a limit on how many times you can make requests to the model on a Free Tier.
 
 ### Updating the Model
-Updating the asset contaning the model and/or updating the deployment. 
+Updating the asset containing the model and/or updating the deployment. 
 
 
 !!!Note
@@ -243,7 +243,7 @@ We have previously created revisions of a model, to rollback the model version, 
             deployment_uid=DEPLOYMENT_UID, changes=meta
         )
 
-3. Finally we'll wait for the update to finish so we can see if it was successful.
+3. Finally, we'll wait for the update to finish so we can see if it was successful.
 
         status = None
         while status not in ["ready", "failed"]:
