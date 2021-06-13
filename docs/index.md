@@ -21,7 +21,7 @@ MLOps is a methodology of operation that aims to facilitate the process of bring
 
 ## MLOps Environment
 This video shows how an example of workflow with a complete MLOps project. This exact project can be found [here](https://github.com/mlops-guide/dvc-gitactions) and is an example end-to-end made for this guide.
-<div style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/sRQKk4C1dOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div style="text-align:center"><iframe width="560" height="315" src="https://www.youtube.com/embed/URpGaE-FA5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 
 ### Architecture
