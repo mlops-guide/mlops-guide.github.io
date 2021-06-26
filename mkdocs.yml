@@ -1,5 +1,6 @@
 site_name: MLOps Guide
 site_url: https://mlops-guide.github.io/
+site_author: Arthur Olga, Gabriel Monteiro, Guilherme Leite, Vinicius Lima
 site_description: >-
   MLOps Guide introducing concepts and application using DVC, CML, IBM Watson Machine Learning, IBM Watson OpenScale, Terraform and Cookiecutter. Learn how to implement MLOps.
 
