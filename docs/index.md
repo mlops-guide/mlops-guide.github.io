@@ -2,7 +2,7 @@
 
 <img src="./assets/banner.jpg" alt="MlOps Banner" />
 
-This site is intended to be a MLOps Guide to help projects and companies to build more reliable MLOps environment. This guide should contemplate the theory behind MLOps and an implementation that should fit for most use cases.
+This site is intended to be a MLOps Guide to help projects and companies to build more reliable MLOps environment. This guide should contemplate the theory behind MLOps and an implementation that should fit for most use cases. Made by [Arthur Olga](https://github.com/arthurolga), [Gabriel Monteiro](https://github.com/gabriellm1), [Guilherme Leite](https://github.com/guipleite) and [Vinicius Lima](https://github.com/ViniGl)
 
 ## What is MLOps?
 

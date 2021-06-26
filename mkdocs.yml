@@ -1,9 +1,12 @@
 site_name: MLOps Guide
-
+site_url: https://mlops-guide.github.io/
+site_description: >-
+  MLOps Guide introducing concepts and application using DVC, CML, IBM Watson Machine Learning, IBM Watson OpenScale, Terraform and Cookiecutter. Learn how to implement MLOps.
 
 repo_name: mlops-guide
 repo_url: https://github.com/mlops-guide/mlops-guide.github.io
-site_url: https://mlops-guide.github.io/
+edit_uri: "tree/main/docs"
+
 theme: 
   name: material
   favicon: assets/favicon.png
