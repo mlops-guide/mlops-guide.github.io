@@ -45,7 +45,7 @@ Currently there are many tools used to create and automate Machine Learning pipe
 | -------------------- |:-----------------:|:----------:|:------------ |
 | DVC                  | Open-source       | Iterative  | DVC can be used to make Data Pipelines, which can be automated and reproduced. Very useful if already using DVC for Data and Model versioning. Easily configured and run. Language and framework agnostic. |
 | Tensorflow Extended (TFX) | Open-source       | Tensorflow | Used for production Machine Learning pipelines. Heavily integrated with Google and GCP. Only works with Tensorflow.
-| Kubeflow             | Open-source       | Google, Kubeflow | Kubeflow can build automated pipelines and experiments. Intended to build a complete end-to-end solution for Machine learning, being able to also serve and monitor models. Uses Kubernetes and is based on Tensorflow Extended. Works with Tensoorflow and Pytorch. |
+| Kubeflow             | Open-source       | Google, Kubeflow | Kubeflow can build automated pipelines and experiments. Intended to build a complete end-to-end solution for Machine learning, being able to also serve and monitor models. Uses Kubernetes and is based on Tensorflow Extended. Works with Tensorflow and Pytorch. |
 | MLflow               | Open-source       | MLflow Project | Open-source platform for the machine learning lifecycle. Can be used with Python, Conda and Docker. Large community. |
 
 </center>
