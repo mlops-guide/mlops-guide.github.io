@@ -32,3 +32,4 @@ Most tools used for serving Machine Learning models have monitoring tools. In ma
 | OpenShift            | Open-source        | Red Hat    | Kubernetes based system able to deploy various types of applications. It is platform agnostic and can be used for any type of application. Can be useful when a model is heavily integrated into a microservice  environment.|
 | Seldon Core          | Open-source        | SeldonIO   | Deploys models into microservices with Advanced Metrics, Request Logging, Explainers, Outlier Detectors, A/B Tests, Canaries and more. Platform agnostic and works with many Machine Learning frameworks |
 | Tensorflow Extended (TFX) | Open-source        | Tensorflow | Deploy Tensorflow Models as API and has monitoring capabilities. |
+| Arize AI | Proprietary w/Community Edition     | Arize AI | Monitors for performance, drift detection (including for embeddings), data quality checks, and model validation. |
