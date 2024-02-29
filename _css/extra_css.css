@@ -1,0 +1,35 @@
+
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.zoom {
+    transition: transform ease-in-out 0.5s;
+    cursor: zoom-in;
+    height: auto;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px;
+    background-color: #fff;
+}
+
+.image-zoom-large {
+    transform: scale(1);
+    cursor: zoom-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 100;
+    position: absolute;
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.md-typeset__table{
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+}

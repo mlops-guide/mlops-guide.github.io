@@ -1,0 +1,1430 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MLOps Guide introducing concepts and application using DVC, CML, IBM Watson Machine Learning, IBM Watson OpenScale, Terraform and Cookiecutter. Learn how to implement MLOps.">
+      
+      
+        <meta name="author" content="Arthur Olga, Gabriel Monteiro, Guilherme Leite, Vinicius Lima">
+      
+      
+        <link rel="canonical" href="https://mlops-guide.github.io/Deployment/">
+      
+      
+        <link rel="prev" href="../Versionamento/pipelines_dvc/">
+      
+      
+        <link rel="next" href="../CICD/tests/">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+    
+    
+      
+        <title>Deployment with Watson Machine Learning - MLOps Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../ASCII_cinema/asciinema-player.css">
+    
+      <link rel="stylesheet" href="../_css/extra_css.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment-with-watson-machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MLOps Guide" class="md-header__button md-logo" aria-label="MLOps Guide" data-md-component="logo">
+      
+  <img src="../assets/logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MLOps Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment with Watson Machine Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.598 1.591a.749.749 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786Zm1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mlops-guide/mlops-guide.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mlops-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MLOps Guide" class="md-nav__button md-logo" aria-label="MLOps Guide" data-md-component="logo">
+      
+  <img src="../assets/logo-white.png" alt="logo">
+
+    </a>
+    MLOps Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mlops-guide/mlops-guide.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mlops-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contents
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Principles of MLOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Principles of MLOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLOps/Data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLOps/PipelineAutomation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLOps/FeatureStore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Storing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLOps/CICDML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD for Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLOps/Monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Continuous Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure/project_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools and Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure/starting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting a New Project with Cookiecutter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Environment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Infraestrutura/Auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IAM Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Infraestrutura/Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting Up the IBM Environment with Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Infraestrutura/Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing the deployment space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versioning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Versioning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versionamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is DVC?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versionamento/basic_dvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Versioning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Versionamento/pipelines_dvc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working with Pipelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment with Watson Machine Learning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deployment with Watson Machine Learning
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-watson-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Watson Machine Learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-using-python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment using Python API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-model-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Model Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating the Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Rollback
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI/CD for Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            CI/CD for Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICD/tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementing Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICD/cml_testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Continuous Integration with CML and Github Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CICD/cml_deploy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Continous Delivery with CML, Github Actions and Watson ML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Openscale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring with IBM OpenScale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-watson-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Watson Machine Learning?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-using-python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment using Python API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-model-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Model Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating the Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Rollback
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="deployment-with-watson-machine-learning">Deployment with Watson Machine Learning</h1>
+<h3 id="what-is-watson-machine-learning">What is Watson Machine Learning?</h3>
+<p><a href="https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html">Watson Machine Learning</a> (WML) is a service from the IBM Cloud suite that supports popular frameworks such as TensorFlow, PyTorch, and Keras to build and deploy models. Using this tool we can store, version and deploy models via online deployment. </p>
+<p>After creating and training a ML model we can upload it as an <em>Asset</em> in the Deployment Space, in the IBM Cloudpak. When we create a new deployment, we choose what model asset we want the deployment to reference:
+<img src="../assets/Deployment/word_deploy_space_1.1.png" alt="drawing" />
+<a href="https://dataplatform.cloud.ibm.com/docs/content/wsj/wmls/wmls-deploy-overview.html">IBM Dataplatform Deocumentation</a> </p>
+<h3 id="deployment-using-python-api">Deployment using Python API</h3>
+<p>To deploy our ML model, we will use IBM's Watson Machine Learning, which will allow us to easily deploy the model as a web service. Since we want to automatize pipelines, we will be creating scripts using the <a href="http://ibm-wml-api-pyclient.mybluemix.net/">WML Python API</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The complete script can be found on our <a href="https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_deploy_pipeline.py">example repository</a></p>
+</div>
+<p>The deployment scrip takes  the path to the trained model, the path to the root of the project containing the <code>metadata.yaml</code> file, and the credentials file.</p>
+<div class="highlight"><pre><span></span><code><span class="n">python3</span> <span class="n">model_deploy_pipeline</span><span class="o">.</span><span class="n">py</span> <span class="o">./</span><span class="n">model_file</span> <span class="o">../</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">project</span><span class="o">/</span> <span class="o">../</span><span class="n">credentials</span><span class="o">.</span><span class="n">yaml</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Using these arguments constant variables are set
+        import os
+        import sys
+        import yaml</p>
+<div class="highlight"><pre><span></span><code>MODEL_PATH = os.path.abspath(sys.argv[1])
+PROJ_PATH = os.path.abspath(sys.argv[2])
+CRED_PATH = os.path.abspath(sys.argv[3])
+META_PATH = PROJ_PATH + &quot;/metadata.yaml&quot;
+</code></pre></div>
+</li>
+<li>
+<p>After that, the <code>yaml</code> files are loaded as dictionaries and the model is loaded (using either <code>joblib</code> or <code>pickle</code>).</p>
+<div class="highlight"><pre><span></span><code>with open(CRED_PATH) as stream:
+    try:
+        credentials = yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
+
+with open(META_PATH) as stream:
+    try:
+        metadata = yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
+
+with open(MODEL_PATH, &quot;rb&quot;) as file:
+    # pickle_model = pickle.load(file)
+    pipeline = joblib.load(file)
+</code></pre></div>
+</li>
+<li>
+<p>The next step is to create an instance of the IBM Watson <code>client</code> , to do that the credential loaded above will be used and a default <a href="paginaDoDeploySpace">Deployment Space</a> will be set using the ID contained in the credentials file, other constants will be set with information’s regarding the model found on the <code>metadata</code> file.</p>
+<div class="highlight"><pre><span></span><code>from ibm_watson_machine_learning import APIClient
+
+wml_credentials = {&quot;url&quot;: credentials[&quot;url&quot;], &quot;apikey&quot;: credentials[&quot;apikey&quot;]}
+
+client = APIClient(wml_credentials)
+client.spaces.list()
+
+MODEL_NAME = metadata[&quot;project_name&quot;] + &quot;_&quot; + metadata[&quot;project_version&quot;]
+DEPLOY_NAME = MODEL_NAME + &quot;-Deployment&quot;
+MODEL = pipeline
+SPACE_ID = credentials[&quot;space_id&quot;]
+
+client.set.default_space(SPACE_ID)
+</code></pre></div>
+</li>
+<li>
+<p>Before the deployment, we need to give Watson some characteristics from our model, such as name, type (in this case is  <code>scikit-learn_0.23</code>) and specifications of the instance that will run the micro-service. Next, the model is stored as an <code>Asset</code> on Watson ML.</p>
+<div class="highlight"><pre><span></span><code>model_props = {
+    client.repository.ModelMetaNames.NAME: MODEL_NAME,
+    client.repository.ModelMetaNames.TYPE: metadata[&quot;model_type&quot;],
+    client.repository.ModelMetaNames.SOFTWARE_SPEC_UID: client.software_specifications.get_id_by_name(
+        &quot;default_py3.7&quot;
+    ),
+}
+
+model_details = client.repository.store_model(model=MODEL, meta_props=model_props)
+model_uid = client.repository.get_model_uid(model_details)
+</code></pre></div>
+</li>
+<li>
+<p>Once completed, we'll give the deployment a name and then deploy the model using the store ID obtained in the previous step.</p>
+<div class="highlight"><pre><span></span><code>deployment_props = {
+    client.deployments.ConfigurationMetaNames.NAME: DEPLOY_NAME,
+    client.deployments.ConfigurationMetaNames.ONLINE: {},
+}
+
+deployment = client.deployments.create(
+    artifact_uid=model_uid, meta_props=deployment_props
+)
+</code></pre></div>
+</li>
+<li>
+<p>Finally, the storage and deployment IDs are added or updated to in the <code>metadata.yaml</code> file.</p>
+<div class="highlight"><pre><span></span><code>deployment_uid = client.deployments.get_uid(deployment)
+
+metadata[&quot;model_uid&quot;] = model_uid
+metadata[&quot;deployment_uid&quot;] = deployment_uid
+
+f = open(META_PATH, &quot;w+&quot;)
+yaml.dump(metadata, f, allow_unicode=True)
+</code></pre></div>
+</li>
+</ol>
+<h3 id="accessing-model-predictions">Accessing Model Predictions</h3>
+<p>Having deployed the model, we can access it's predictions by sending requests to an end-point or by using the Python <code>ibm_watson_machine_learning</code> library, where we can send either features for a single prediction or payloads containing multiple lines of a dataframe, for example.</p>
+<p>The payload body is made of the dataframe column names under the <code>"fields"</code> key and the features under <code>"values"</code> .</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Watson API</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+            <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="n">X</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">deployments</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">DEPLOYMENT_UID</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Requests</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://us-south.ml.cloud.ibm.com/ml/v4/deployments?space_id=&lt;string&gt;&amp;tag.value=&lt;string&gt;&amp;asset_id=&lt;string&gt;&amp;version=2020-09-01&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;input_data&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+            <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="n">X</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>    
+
+<span class="n">headers</span><span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</div>
+<p>The model response will contain the scoring result containing prediction and corresponding  probability. In the case of a binary classifier, the response will have the following format:</p>
+<div class="highlight"><pre><span></span><code>[1, [0.06057910314628456, 0.9394208968537154]],
+[1, [0.23434887273340754, 0.7656511272665925]],
+[1, [0.08054183674380211, 0.9194581632561979]],
+[1, [0.07877206037184215, 0.9212279396281579]],
+[0, [0.5719774367794239, 0.42802256322057614]],
+[1, [0.017282880299552716, 0.9827171197004473]],
+[1, [0.01714869904990468, 0.9828513009500953]],
+[1, [0.23952044576217457, 0.7604795542378254]],
+[1, [0.03055527110545664, 0.9694447288945434]],
+[1, [0.2879899631347379, 0.7120100368652621]],
+[0, [0.9639766912352016, 0.03602330876479841]],
+[1, [0.049694416576558154, 0.9503055834234418]],
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This consumes CUH. Watson Machine Learning CUH are used for running experiments, so there is a limit on how many times you can make requests to the model on a Free Tier.</p>
+</div>
+<h3 id="updating-the-model">Updating the Model</h3>
+<p>Updating the asset containing the model and/or updating the deployment. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The complete scripts for the <a href="https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_deployment_pipeline.py">deployment</a> and <a href="https://github.com/mlops-guide/dvc-gitactions/blob/master/src/scripts/Pipelines/model_update_pipeline.py">model</a> can be found on our template repository.</p>
+</div>
+<ol>
+<li>
+<p>Firstly we need to update the model asset in WML by passing the new model as well as a name.</p>
+<div class="highlight"><pre><span></span><code>print(&quot;\nCreating new version&quot;)
+
+published_model = client.repository.update_model(
+    model_uid=MODEL_GUID,
+    update_model=model,
+    updated_meta_props={
+        client.repository.ModelMetaNames.NAME: metadata[&quot;project_name&quot;]
+        + &quot;_&quot;
+        + metadata[&quot;project_version&quot;]
+    },
+)
+</code></pre></div>
+</li>
+<li>
+<p>After that a new revision can be created.</p>
+<div class="highlight"><pre><span></span><code>new_model_revision = client.repository.create_model_revision(MODEL_GUID)
+
+rev_id = new_model_revision[&quot;metadata&quot;].get(&quot;rev&quot;)
+print(&quot;\nVersion:&quot;, rev_id)
+
+client.repository.list_models_revisions(MODEL_GUID)
+</code></pre></div>
+</li>
+<li>
+<p>Finally we can update the deployment.</p>
+<div class="highlight"><pre><span></span><code>change_meta = {client.deployments.ConfigurationMetaNames.ASSET: {&quot;id&quot;: MODEL_GUID}}
+
+print(&quot;Updating the following model: &quot;)
+print(client.deployments.get_details(DEPLOYMENT_UID))
+
+client.deployments.update(DEPLOYMENT_UID, change_meta)
+</code></pre></div>
+</li>
+</ol>
+<h3 id="model-rollback">Model Rollback</h3>
+<p>We have previously created revisions of a model, to rollback the model version, we'll list all the revisions made.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="https://github.com/mlops-guide/dvc-gitactions/blob/0.0.11/src/scripts/Pipelines/model_redeploy_pipeline.py">Complete script</a></p>
+</div>
+<ol>
+<li>
+<p>Listing the revisions.</p>
+<div class="highlight"><pre><span></span><code>client.repository.list_models_revisions(MODEL_GUID)
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>--  -------------  ------------------------
+ID  NAME           CREATED
+3   Rain_aus_v0.3  2021-03-31T18:28:07.771Z
+2   Rain_aus_v0.3  2021-03-31T18:28:07.771Z
+1   Rain_aus_v0.3  2021-03-31T18:28:07.771Z
+--  -------------  ------------------------
+</code></pre></div>
+</li>
+<li>
+<p>Now we can choose which revision we want to rollback to and then update the deployment referencing that revision ID.</p>
+<div class="highlight"><pre><span></span><code>MODEL_VERSION = input(&quot;MODEL VERSION: &quot;)
+
+meta = {
+    client.deployments.ConfigurationMetaNames.ASSET: {
+        &quot;id&quot;: MODEL_GUID,
+        &quot;rev&quot;: MODEL_VERSION,
+    }
+}
+updated_deployment = client.deployments.update(
+    deployment_uid=DEPLOYMENT_UID, changes=meta
+)
+</code></pre></div>
+</li>
+<li>
+<p>Finally, we'll wait for the update to finish so we can see if it was successful.</p>
+<div class="highlight"><pre><span></span><code>status = None
+while status not in [&quot;ready&quot;, &quot;failed&quot;]:
+    print(&quot;.&quot;, end=&quot; &quot;)
+    time.sleep(2)
+    deployment_details = client.deployments.get_details(DEPLOYMENT_UID)
+    status = deployment_details[&quot;entity&quot;][&quot;status&quot;].get(&quot;state&quot;)
+
+print(&quot;\nDeployment update finished with status: &quot;, status)
+</code></pre></div>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.extend"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+        <script src="../ASCII_cinema/asciinema-player.js"></script>
+      
+        <script src="../_js/extra_js.js"></script>
+      
+    
+  </body>
+</html>
